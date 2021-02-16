@@ -1,0 +1,397 @@
+
+  .body{
+    background-color: beige;
+  }
+  
+  .container{
+    position: relative;
+    width: 950px;
+    margin: 0 auto;
+    align-content: center;
+    margin: 0 auto;
+  
+   }
+   
+   .flags{
+     box-sizing: border-box; 
+     display:inline-block;
+    width: 500px;
+    height: 200px;
+     
+     
+   }
+  
+  /* France
+    Blue: #002495
+    White: #FFFFFF
+    Red: #ED2938
+    Aspect Ratio: 2:3
+*/
+
+ .FranceFlag{
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+ 
+ .franceBlue{
+width: 300px;
+height: 600px;
+background-color: #002495;
+     
+ }
+ 
+ .franceWhite{
+  
+  width: 300px;
+  height: 600px;
+   background-color: white;  
+   
+ }
+ 
+ .franceRed{
+   position: relative;
+ 
+  width: 300px;
+  height: 600px;
+   background-color:  #ED2938;  
+   
+   
+ }
+/*
+Germany
+    Black: #000000
+    Red: #DE0002
+    Yellow: #FFCE00
+    Aspect Ratio: 3:5 */
+    
+    .GermFlag{
+      margin-bottom: 20px;
+      margin-top: 20px;
+ 
+    }
+     
+     .germBlack{
+       position: relative;
+       top: 50px;
+      height: 200px;
+       width: 900px;
+       background-color: #000000;
+         
+     }
+     
+     .germRed{
+      position: relative;
+      top: 40px;
+      height: 200px;
+      width: 900px;
+    background-color: #DE0002;  
+       
+     }
+     
+     .germYell{
+      position: relative;
+      top: 30px;
+       height: 200px;
+      width: 900px;
+      background-color: #FFCE00;  
+       
+     }
+ /*Madagascar
+    White: #FFFFFF
+    Red: #FC3E32
+    Green: #007E39
+    Aspect Ratio: 2:3 */
+
+    .MadFlag{
+      margin-bottom: 20px;
+      margin-top: 20px;
+     
+      position: relative;
+      top: 40px;
+    }
+     
+     .madWhite{
+       position: relative;
+       left: 0px;
+       top: 10px;
+      height: 600px;
+      width: 200px;
+     background-color: #FFFFFF;
+         
+     }
+     
+     .madRed{
+       position: relative;
+       left: 0px;
+       bottom: 290px;
+      height: 300px;
+      width: 700px;
+       background-color:  #FC3E32;  
+       
+     }
+     
+     .madGreen{
+      position: relative;
+      left: 203px;
+      bottom: 293px;
+      height: 300px;
+      width: 700px;
+       background-color: #007E39 ;  
+       
+     }
+
+/*
+Switzerland- white cross centered inside red background
+    White: #FFFFFF
+    Red: #FF0002
+    Aspect Ratio: 1:1 */
+    
+    .SwitzFlag{
+      
+      margin-bottom: 20px;
+      margin-top: 20px;
+     
+    }
+     
+     .switzWhite{
+      height: 280px;
+      position: relative;
+      width: 80px;
+      bottom: 700px;
+      left: 400px;
+     background: #FFFFFF;
+         
+     }
+    
+    .switzWhite{
+      height: 400px;
+      width: 150px;
+      position: relative;
+      left: 360px;
+      bottom: 780px;
+     
+      
+      background: #FFFFFF;
+       
+     }
+    
+    .switzWhite:after {
+      background: #FFFFFF;
+      content: "";
+      height: 150px;
+      width:400px;
+      left: -120px;
+      right: 120px;
+      position: absolute;
+      top: 120px;
+      bottom: 100px;
+     
+    }
+     
+     .switzRed{
+      position: relative;
+      bottom: 250px;
+     height: 600px;
+      width: 900px;
+     background-color: #FF0002;  
+      
+    
+     }    
+    
+/*Sweden - yellow cross from left side and right side of cross completely across flag
+    Blue: #0269A6
+    Yellow: #FECC00
+    Aspect Ratio: 5:8 */
+    
+    .SwedFlag{
+      margin-bottom: 20px;
+      margin-top: 20px;
+      
+      position: relative;
+      bottom: 650px;
+     
+      
+   
+    }
+     .swedBlue{
+      padding-top: 48%;
+      height: 500px;
+      width:900px;
+     background-color:  #0269A6;
+     }
+     
+     .swedYell{
+      height: 502px;
+      position: relative;
+      width: 80px;
+      bottom: 505px;
+     
+      left: 90px;
+       background-color: #FECC00;  
+       
+     }
+    
+    .swedYell:after {
+      background:  #FECC00;  
+      content: "";
+      height: 70px;
+      left: -90px;
+      position: absolute;
+      top: 100px;
+      bottom: 150px;
+     width:900px;
+    }
+
+   
+
+/*Gambia- horizontal red(larger)[smaller white space] blue(small) [smaller white space] green(larger)
+  Red: #CE1127
+  White: #FFFFFF
+  Blue: #0D1D8B
+  Green: #3B7827
+  Aspect Ratio: 2:3 */
+
+  
+  .GambFlag{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+      bottom: 1150px;
+     
+    
+  
+ 
+  }
+  .gambRed{
+    position: relative;
+    top: 30px;
+    height: 200px;
+    width: 900px;
+     background-color: #CE1127;  
+     
+   }
+   .gambWhite{
+    position: relative;
+    bottom: 0px;
+    top: -5px;
+    height: 50px;
+    width: 900px;
+       background-color: #FFFFFF;
+       
+   }
+   
+   .gambBlue{
+    position: relative;
+    bottom: 10px;
+    height: 102px;
+      width: 900px;
+     background-color: #0D1D8B;  
+   }
+   
+   .gambGreen{
+    position: relative;
+    bottom: 20px;
+    height: 180px;
+    width: 900px;
+         background-color:#3B7827 ;  
+     
+   }
+
+/*Japan - white background with red circle in the middle
+ White: #FFFFFF
+ Red: #BC022C
+ Aspect Ratio: 2:3 */
+ 
+ .JapFlag{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: relative;
+  bottom: 1150px;
+ 
+  
+
+}
+ 
+ .japWhite{
+ 
+ height: 600px;
+ width: 900px;
+ background-color: #FFFFFF;
+
+ }
+ 
+ .japRed{
+   position: absolute;
+   top:100px;
+   left:250px;
+   
+  width: 400px;
+  height: 400px;
+  background-color: #BC022C; 
+  border-radius: 50%;
+
+  
+ }  
+ 
+ 
+
+  
+
+ /*Niger - horizontal orange, white background with orange circle in center, green 
+    Orange: #E15307
+    White: #FFFFFF
+    Green: #10AF2A
+    Aspect Ratio: 6:7 */
+
+      
+    .NiFlag{
+      margin: 0 auto;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      position: relative;
+      bottom: 1150px;
+      
+      
+    }
+     
+     .niOrangeBack{
+       position: relative;
+       bottom: 5px;
+      height: 200px;
+      width: 900px;
+     background-color: #E15307;
+         
+     }
+     .niOrangeCircle{
+      
+      position: absolute;
+      bottom: 240px;
+      left: 350px;
+      width: 150px;
+     height: 150px;
+      background-color: #E15307;
+     
+     border-radius: 50%;
+   
+     
+         
+     }
+     .niWhite{
+       position: relative;
+       bottom: 5px;
+      height: 200px;
+      width: 900px;
+       background-color: #FFFFFF;  
+       
+     }
+     
+     .niGreen{
+       position: relative;
+       bottom: 5px;
+      height: 200px;
+      width: 900px;
+       background-color:  #10AF2A;  
+       
+     } 

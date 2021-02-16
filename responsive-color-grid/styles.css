@@ -1,0 +1,173 @@
+
+/*Here are the colors:
+
+    #F5C6D6
+    #EE2E84
+    #85CFD8
+    #8DC63F
+    #E76E34
+
+ To practice media queries, you must make this color grid keep it's regular form (look like the picture above) from large screens down until 768px. Once it gets below 768px, each color must expand to the full-width of its container,
+    */
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-weight: lighter;
+        box-sizing: border-box; 
+        
+    }
+    #container{
+        position: absolute;
+        right: 450px;
+        left: 350px;
+       
+        width: 1250px;
+        display: block;
+      
+       }
+      
+       .color-grid{
+           border: 5px solid white;
+           position: relative;
+           margin: 0px;
+           align-items: center;
+       }
+       
+       #light-pink{
+          width: 1160px;
+          height: 200px;
+         margin-top: 300px;
+         background-color:#F5C6D6 ;
+           
+       }
+       
+       #pink1{
+        height: 200px;
+        width:290px; 
+         background-color: #EE2E84;  
+         
+       }
+       
+       #pink2{
+        margin-left: 290px;
+        bottom: 200px;
+         height: 200px;
+         width:290px; 
+         
+         background-color: #EE2E84;  
+         
+         
+       }
+       #pink3{
+        margin-left: 580px;
+        bottom: 400px;
+         height: 200px;
+         width:290px; 
+         
+         background-color: #EE2E84;    
+       }
+
+       #pink4{
+        margin-left: 870px;
+        bottom: 600px;
+         height: 200px;
+         width:290px; 
+         
+         background-color: #EE2E84;  
+         
+         
+       }
+       
+       #blue1{
+        bottom: 600px;
+         height: 200px;
+         width:580px;
+        
+         background-color: #85CFD8;
+           
+          
+       }
+       #blue2{
+        margin-left: 580px;
+        bottom: 800px;
+         height: 200px;
+         width:580px;
+        
+         background-color: #85CFD8;
+       }
+       
+       
+       #green{ 
+        bottom: 800px;
+         height: 200px;
+         width:800px;
+        
+         background-color:  #8DC63F;
+       }
+       
+       #orange{
+        margin-left: 800px;
+        bottom: 1000px;
+         height: 200px;
+         width:360px;
+       
+         background-color:  #E76E34;
+       }
+
+
+    @media only screen and (max-width: 768px){
+
+    
+
+      #light-pink{
+        top: 50px;
+        margin: 0px;
+        padding: 0px;
+        width: 768px;
+        height: 50px;
+      }
+        
+      #pink1, #pink2, #pink3, #pink4{
+        top: 50px;
+        margin: 0px;
+        padding: 0px;
+        width: 768px;
+        height: 50px;
+      }
+      #blue1, #blue2{
+        top: 50px;
+        margin: 0px;
+        padding: 0px;
+        width: 768px;
+        height: 50px;
+      }
+      #green{
+        top: 50px;
+        margin: 0px;
+        padding: 0px;
+        width: 768px;
+        height: 50px;
+      }
+      #orange{
+        
+        top: 50px;
+        margin: 0px;
+        padding: 0px;
+        width: 768px;
+        height: 50px;
+      }
+      
+        .color-grid {
+           
+            border: none;
+            padding: 2px;
+            position: relative;
+          
+            display: inline-block;
+            width: 768px;
+            height: 50px;
+
+        }
+    }
