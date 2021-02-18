@@ -13,31 +13,35 @@ You should also be able to press the first letter of the colors (typing "r" on t
  and have the box change to that color. Check this site for a full list of keyboard key codes. https://css-tricks.com/snippets/javascript/javascript-keycodes/
   */
 
- var square = document.getElementsByClassName("square");
- 
-  square.addEventListener(MouseEvent, handleButtonClick(square)) //create function and add it here ("hover", handleButtonClick
-  
+ var square = document.getElementById("square")
+ var body = document.getElementById("body")
+ square.addEventListener("click", function HandleMouseClick(square){} )
+
+//call the function
 
 
-//function that checks for certain mouse activity   should I use a case statement instead of if, else-if?
-function handleButtonClick(_square){
+//function that handles mouse activity 
+
+ function HandleMouseClick(square){
+   if (MouseEvent.page(square)){  //mouse hover over square
+    document.square.style.backgroundColor = "blue"
+   }
+   else if(MouseEvent.mouseDown(square)){   //mouse button down over square
+    document.square.style.backgroundColor = "red"
+   }
+   else if (MouseEvent.mouseUp(square)){   //mouse button up over square
+    document.square.style.backgroundColor = "yellow"
+   }
+   else if(MouseEvent.dblClick(square)){   //mouse double clicked on square
+    document.square.style.backgroundColor = "green"
+   }
+   else if(WheelEvent(square)){        //mouse scroll anywhere 
+    document.style.backgroundColor = "orange"
+   }
+
+  }
+
+//function to handle keypresses
   if (keydown(82) == true){//keydown r == true
     document.square.style.backgroundColor = "red"
   }
-   else if (MouseEvent.hover == true){  //mouse hover
-    document.square.style.backgroundColor = "blue"
-   }
-   else if(MouseEvent.rightClick== true){   //mouse button down
-    document.square.style.backgroundColor = "red"
-   }
-   else if(MouseEvent.mouseUp== true){   //mouse button up
-    document.square.style.backgroundColor = "yellow"
-   }
-   else if(MouseEvent.dblClick){   //mouse double clicked 
-    document.square.style.backgroundColor = "green"
-   }
-   else if(MouseEvent.scroll== true){         //proper syntax/ use of scroll?
-    document.style.backgroundColor = "orange"
-   }
-}
-
