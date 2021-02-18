@@ -16,27 +16,28 @@ You should also be able to press the first letter of the colors (typing "r" on t
  var square = document.getElementById("square")
  var body = document.getElementById("body")
  square.addEventListener("click", function HandleMouseClick(square){} )
+ body.addEventListener("click", function HandleMouseClick(body){} )
 
-//call the function
 
 
 //function that handles mouse activity 
 
- function HandleMouseClick(square){
+function HandleMouseClick(square){
    if (MouseEvent.page(square)){  //mouse hover over square
-    document.square.style.backgroundColor = "blue"
+    square.style.backgroundColor = "blue"
    }
    else if(MouseEvent.mouseDown(square)){   //mouse button down over square
-    document.square.style.backgroundColor = "red"
+    square.style.backgroundColor = "red"
    }
    else if (MouseEvent.mouseUp(square)){   //mouse button up over square
-    document.square.style.backgroundColor = "yellow"
+    square.style.backgroundColor = "yellow"
    }
+  
    else if(MouseEvent.dblClick(square)){   //mouse double clicked on square
-    document.square.style.backgroundColor = "green"
+    square.style.backgroundColor = "green"
    }
-   else if(WheelEvent(square)){        //mouse scroll anywhere 
-    document.style.backgroundColor = "orange"
+   else if(WheelEvent.page()){        //mouse scroll anywhere 
+    square.style.backgroundColor = "orange"
    }
 
   }
