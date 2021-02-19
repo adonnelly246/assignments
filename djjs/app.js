@@ -15,34 +15,34 @@ You should also be able to press the first letter of the colors (typing "r" on t
 
  var square = document.getElementById("square")
  var body = document.getElementById("body")
- square.addEventListener("click", function HandleMouseClick(square){} )
- body.addEventListener("click", function HandleMouseClick(body){} )
+ //body.addEventListener(WheelEvent,  HandleMouseEvent(body))
+
+ square.addEventListener("dblclick",  e => {
+ 
+  square.style.backgroundColor = "green"
+});
+ 
+square.addEventListener("mousedown",  e => {
+ 
+  square.style.backgroundColor = "red"
+});
+ 
+square.addEventListener("mouseup",  e => {
+ 
+  square.style.backgroundColor = "yellow"
+});
+
+body.addEventListener(WheelEvent,  e => {
+ 
+  square.style.backgroundColor = "orange"
+});
 
 
 
-//function that handles mouse activity 
+ square.addEventListener('mousedown', e => { //mouse hover blue
+  x = e.offsetX;
+  y = e.offsetY;
+ 
+})
 
-function HandleMouseClick(square){
-   if (MouseEvent.page(square)){  //mouse hover over square
-    square.style.backgroundColor = "blue"
-   }
-   else if(MouseEvent.mouseDown(square)){   //mouse button down over square
-    square.style.backgroundColor = "red"
-   }
-   else if (MouseEvent.mouseUp(square)){   //mouse button up over square
-    square.style.backgroundColor = "yellow"
-   }
   
-   else if(MouseEvent.dblClick(square)){   //mouse double clicked on square
-    square.style.backgroundColor = "green"
-   }
-   else if(WheelEvent.page()){        //mouse scroll anywhere 
-    square.style.backgroundColor = "orange"
-   }
-
-  }
-
-//function to handle keypresses
-  if (keydown(82) == true){//keydown r == true
-    document.square.style.backgroundColor = "red"
-  }
