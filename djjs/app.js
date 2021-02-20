@@ -17,32 +17,30 @@ You should also be able to press the first letter of the colors (typing "r" on t
  var body = document.getElementById("body")
  //body.addEventListener(WheelEvent,  HandleMouseEvent(body))
 
- square.addEventListener("dblclick",  e => {
+ square.addEventListener("dblclick",  function(e)  {
  
   square.style.backgroundColor = "green"
 });
  
-square.addEventListener("mousedown",  e => {
+square.addEventListener("mousedown",  function(e) {
  
   square.style.backgroundColor = "red"
 });
  
-square.addEventListener("mouseup",  e => {
+square.addEventListener("mouseup",  function(e) {
  
   square.style.backgroundColor = "yellow"
 });
 
-body.addEventListener(WheelEvent,  e => {
+body.addEventListener("wheel",  function(e)  { //mouse scroll
  
   square.style.backgroundColor = "orange"
 });
 
 
-
- square.addEventListener('mousedown', e => { //mouse hover blue
-  x = e.offsetX;
-  y = e.offsetY;
+ square.addEventListener('mouseover',  function(e){ //mouse hover blue
  
-})
+  square.style.backgroundColor = "blue"
+});
 
   
