@@ -15,24 +15,24 @@ You should also be able to press the first letter of the colors (typing "r" on t
 
  var square = document.getElementById("square")
  var body = document.getElementById("body")
- //body.addEventListener(WheelEvent,  HandleMouseEvent(body))
+ 
 
- square.addEventListener("dblclick",  function(e)  {
+ square.addEventListener('dblclick',  function(e)  {
  
   square.style.backgroundColor = "green"
 });
  
-square.addEventListener("mousedown",  function(e) {
+square.addEventListener('mousedown',  function(e) {
  
   square.style.backgroundColor = "red"
 });
  
-square.addEventListener("mouseup",  function(e) {
+square.addEventListener('mouseup',  function(e) {
  
   square.style.backgroundColor = "yellow"
 });
 
-body.addEventListener("wheel",  function(e)  { //mouse scroll
+body.addEventListener('wheel',  function(e)  { //mouse scroll
  
   square.style.backgroundColor = "orange"
 });
@@ -44,3 +44,17 @@ body.addEventListener("wheel",  function(e)  { //mouse scroll
 });
 
   
+document.addEventListener('keydown', function (event) {
+  if (event.key == 'b') {
+    square.style.backgroundColor ="blue";
+  }
+  else if (event.key == 'r') {
+    square.style.backgroundColor = "red";
+  }
+ else if (event.key == 'y') {
+   square.style.backgroundColor = "yellow";
+  }
+else if (event.key == 'o') {
+  square.style.backgroundColor = "orange";
+}
+});
