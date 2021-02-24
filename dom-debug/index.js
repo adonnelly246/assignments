@@ -1,24 +1,40 @@
-const colors = ["red", "blue", "green"]
 
+var list = document.getElementById("list");
+
+//const main = document.getElementsByClassName("main");
+//adds the next element on page using createsubitem
 document.getElementById("add").addEventListener("click", function(e){
-    const subItem = createSubItem(e)
-    document.getElementById("list").appendChild(subItem)
-})
+    var input = document.getElementById("input");
+ 
 
-function createDropDown(){
-    const dropDown = document.createElement("select")
-    for (let i = 0; i < colors; i++){
-        const option = createElement("option") 
-        option.innerHTML = colors[i]
-        option.value = colors[i]
-        dropDown.append(option)
+    const userInput = input.innerHTML;
+
+    
+    const subItem = createSubItem(inputVal)
+    document.getElementById("list").appendChild(subItem)
+});
+
+//creates dropdown menu for the color selection
+function createDropDown(Colors){
+    var dropDown = document.createElement("select");
+    var Colors = ["Select a Color", "red", "blue", "green"];
+    
+    //loops through the Colors arr 
+    for ( var i = 0; i < Colors.length; i++){
+        var col = Colors[i];
+        var option = document.createElement("option") 
+        option.textContent = col;
+        option.value = col;
+        dropDown.append(option);
     }
+    
     dropDown.addEventListener("onchange", function(e){
-        e.target.parent.backgroundColor = e.target.value
+       
     })
     return dropDown
 }
 
+//creates subitem
 function createSubItem(e){
     const subItem = document.createElement("div")
     var subItemValue = document.getElementById("input")
@@ -26,7 +42,10 @@ function createSubItem(e){
     const dropDown = createDropDown()
     subItem.appendChild(dropDown)
     subItem.setAttribute("class", "subItem")
+
     return subItem
+
+    
 }
 
 
