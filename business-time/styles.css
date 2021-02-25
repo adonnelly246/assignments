@@ -10,12 +10,17 @@
 
 
  .body{
+  
      background-color: #FFB4A2;
      font-size: 15px;
      font-family: 'Montserrat', sans-serif;
      margin: 50px;
+     margin-top: 0;
     display: flexbox;
-   width: auto;
+    vertical-align: center;
+   
+
+    
 
  }
 
@@ -23,13 +28,10 @@
      font-size: 35px;
      font-family:  'Dancing Script', cursive;
      font-weight:bold;
-     flex-direction: row;
     text-align: center;
-  
-  
-    
+    justify-content: center;
  }
- h1{
+ h1{ /*new/sale*/
     border-radius: 50px;
     border:5px #AB737E;
     background-color: #E5989B;
@@ -39,34 +41,21 @@
 
      width: 600px;
      height: 45px;
+   
+ }
 
-  
-     
-     
- }
- h2{
-    border-radius: 20px;
-    background-color: #706977; 
-    font-family:  'Dancing Script', cursive;
-        
-    padding: 0;
-    width: 200px;
-    margin: 20;
-    margin-left: 500px;
-    margin-right: 50px;
-     text-align: center;
- }
  .navbar{
     list-style-type: none;
     border: 2px solid #995C68;
     margin: 0; 
     background-color:#AB737E;
-   
+  
 
   
 }
 .nav{
-    text-align: center;
+    flex-direction: row;
+    align-items: flex-start;
     padding: 10px;
     margin: 0;
     
@@ -86,18 +75,31 @@
   }
   
 #div1{
-    background-color: #706977;
-    margin-left: 450px;
+    background-color: rgba(112, 105, 119, 0.7);;
     border-radius: 20px;
+    font-size: 16px;
+    width: 700px;
+   justify-content: center;
+    margin-left: 100px;
+    padding-bottom: 20px;
 }
 
+h2{
 
+    font-family:  'Dancing Script', cursive;
+    font-size: 20px;    
+    font-weight: bold;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+     text-align: center;
+ }
 
 .main{
-    font-size: 16px;
-  font-weight: bold;
  font-family: 'Montserrat', sans-serif;
  padding: 10px;
+ padding-top: 30px;
  margin: 35px;
 
 
@@ -106,6 +108,7 @@
 
     margin: 0;
     padding: 0;
+    font-size: 15px;
     font-weight: bold;
 font-family: 'Montserrat', sans-serif; ;
 }
@@ -132,86 +135,70 @@ font-style: italic;
 }
 .image{
     float: left; 
-    border: 5px solid #FFB4A2;
+    border: 2px solid #706977; 
     border-radius: 20px;
+    height: 550px;
     margin: 30px; 
     padding: 0px;
+    margin-top: 40px;
 }
 
- /*mobile first*/
- @media only screen and (max-width: 770px) {
+ /*mobile first (min-width: 400px) and*/
+ @media only screen and  (max-width: 760px) {
    
    
  .body{
-    display: flexbox;
-    margin: 50px;
-    margin-left: 0px;
-    padding: 0px;
-    width: auto;
+   flex-direction: column;
+    width: 200px;
 }
 
      h1{
-        width: 400px;
-     
+      
        padding: 10px;
         margin: 25px; 
         
      }
      h2{
         margin: 0px;
-        margin-left: 300px;
+        margin-left: 250px;
         padding-bottom: 0px;
         width: 300px;
      
     }
 
      .navbar{
-       
         margin: 0;
         margin-bottom: 15px;
-        height: 10px;
-        width: 760px;
         padding-left: 10px;
         padding-bottom: 80px;
+
     }
 
     .nav{
        
-        margin-left: 10px;
+        margin: 0px;
         padding-bottom: 5px;
      }
 
     header{
-        padding-top: 10px;
+ 
        text-align: center;
-        width: 500px;
+        width: 400px;
         height: 30px;
-       margin: 20px;
-       margin-left: 200px;
-       margin-bottom: 30px;
+      
+       font-size: 25px;
     }
     
     .image{
-        flex-direction: column;
-        margin-bottom: 10px;
-        margin: 30px;
-        margin-left: 200px;
         height: 350px;
-        width: 220px;
+        width: 200px;
 
-        border: 2px solid #706977; 
-        border-radius: 20px;
+      
     }
     #div1{
-       align-items: center;
-        margin: 25px;
-        margin-top: 0px;
-        margin-left: 150px;
-        padding: 5px;
-        padding-right: 45px;
-      height:max-content;
-      width: 500px;
-        
+       
+       
     }
-    
+  
+
 }
