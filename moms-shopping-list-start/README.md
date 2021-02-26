@@ -35,8 +35,8 @@ Passing criteria: Demo to an instructor
 
 An instructor or TA will sit with you for a demonstration of this project. They will be assessing your proficiency in the following areas:
 
-    Difference between web app and web site
-    Build very basic web apps (site is functional and based on user interaction)
-    Understand JSON
+    -Difference between web app and web site
+    -Build very basic web apps (site is functional and based on user interaction)
+    -Understand JSON
 
 Passing off this project completes the Web Applications, Level 1 branch of the skills tree.

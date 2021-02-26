@@ -40,3 +40,22 @@
     margin-bottom: 10px;
     text-align: center;
 }
+
+#editBtn{
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    
+}
+#xBtn{
+  display: inline-block;
+  text-align: center;
+    width: 25px;
+    margin-left: 5px;
+  
+}
+
+#newItem{
+    text-align: center;
+    text-transform: capitalize;
+}
