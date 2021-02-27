@@ -7,57 +7,30 @@
 
 
 
-
-
  .body{
   
      background-color: #FFB4A2;
      font-size: 15px;
      font-family: 'Montserrat', sans-serif;
-     margin: 50px;
      margin-top: 0;
-    display: flexbox;
-    vertical-align: center;
-   
-
-    
+    display: inline-grid;
+ align-items: center;
 
  }
 
- header{
-     font-size: 35px;
-     font-family:  'Dancing Script', cursive;
-     font-weight:bold;
-    text-align: center;
-    justify-content: center;
- }
- h1{ /*new/sale*/
-    border-radius: 50px;
-    border:5px #AB737E;
-    background-color: #E5989B;
-     font-size: 40px;
-     font-family:  'Dancing Script', cursive;
-     text-align: center;
-
-     width: 600px;
-     height: 45px;
-   
- }
-
+ 
  .navbar{
     list-style-type: none;
-    border: 2px solid #995C68;
-    margin: 0; 
-    background-color:#AB737E;
-  
-
-  
+    margin-left: 40px;
+ 
 }
 .nav{
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 10px;
+    border: 2px solid #995C68;
+    background-color:#AB737E;
+    padding: 5px;
     margin: 0;
+    margin-left: 20px; 
+    margin-right: 20px;  
     
  }
   a:link {
@@ -73,36 +46,53 @@
       color: black;
     text-decoration: none;
   }
-  
-#div1{
+
+ header{
+     font-size: 35px;
+     font-family:  'Dancing Script', cursive;
+     font-weight:bold;
+    text-align: center;
+ }
+ h1{ /*new/sale*/
+    border-radius: 50px;
+    border:5px #AB737E;
+    background-color: #E5989B;
+     font-size: 40px;
+     font-family:  'Dancing Script', cursive;
+     text-align: center;
+
+     width: 600px;
+     height: 45px;
+   
+ }
+ #div1{
     background-color: rgba(112, 105, 119, 0.7);;
     border-radius: 20px;
     font-size: 16px;
-    width: 700px;
-   justify-content: center;
-    margin-left: 100px;
+  
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
     padding-bottom: 20px;
 }
 
-h2{
-
-    font-family:  'Dancing Script', cursive;
-    font-size: 20px;    
-    font-weight: bold;
-    padding: 20px;
-    padding-bottom: 0px;
-    margin-top: 20px;
-    margin-bottom: 5px;
-     text-align: center;
- }
 
 .main{
- font-family: 'Montserrat', sans-serif;
- padding: 10px;
- padding-top: 30px;
- margin: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    padding-top: 10px;
+    margin: 35px;
+    margin-top: 10px;
+   }
 
-
+   .image{
+    float: left; 
+    border: 2px solid #706977; 
+    border-radius: 20px;
+    margin: 30px; 
+    padding: 0px;
+    margin-top: 40px;
 }
 .p2{
 
@@ -112,10 +102,20 @@ h2{
     font-weight: bold;
 font-family: 'Montserrat', sans-serif; ;
 }
+h2{
+
+    font-family:  'Dancing Script', cursive;
+    font-size: 20px;    
+    font-weight: bold;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+
+
+
 .flowers{
     list-style-type: none;
-    margin-left: 50px;
-    margin-top: 100px;
     padding: 20px;
   
 
@@ -133,72 +133,113 @@ font-weight: bold;
 font-style: italic;
 
 }
+
+
+
+ /*mobile */
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+header{
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-left: 15px;
+}
+#div1{
+  width: 300px;
+   margin-left: 35px;
+}
 .image{
-    float: left; 
-    border: 2px solid #706977; 
-    border-radius: 20px;
-    height: 550px;
-    margin: 30px; 
-    padding: 0px;
-    margin-top: 40px;
+    height: 300px;
+    width: 230px;
+   margin: 5px;
+   margin-left: 25px;
+   margin-bottom: 15px;
 }
-
- /*mobile first (min-width: 400px) and*/
- @media only screen and  (max-width: 760px) {
-   
-   
- .body{
-   flex-direction: column;
-    width: 200px;
+h2{
+    padding:15px;
+    margin-left: 30px;
 }
+} 
 
-     h1{
-      
-       padding: 10px;
-        margin: 25px; 
-        
-     }
-     h2{
-        margin: 0px;
-        margin-left: 250px;
-        padding-bottom: 0px;
-        width: 300px;
-     
-    }
-
-     .navbar{
-        margin: 0;
-        margin-bottom: 15px;
-        padding-left: 10px;
-        padding-bottom: 80px;
-
-    }
-
-    .nav{
-       
-        margin: 0px;
-        padding-bottom: 5px;
-     }
-
-    header{
- 
-       text-align: center;
-        width: 400px;
-        height: 30px;
-      
-       font-size: 25px;
-    }
-    
-    .image{
-        height: 350px;
-        width: 200px;
-
-      
-    }
-    #div1{
-       
-       
-    }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
   
+header{
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-left: 45px;
+}
+#div1{
+  width: 450px;
+   margin-left: 100px;
+}
+.image{
+    height: 300px;
+    width: 230px;
+   margin: 15px;
+   margin-left: 25px;
+  
+}
+h2{
+    padding:15px;
+    margin-left: 30px;
+}
+} 
+} 
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #div1{
+        width: 600px;
+    }
+    .image{
+        margin-left: 40px;
+        height: 450px;
+        width: 350px;
+    }
+    header{
+    padding-bottom: 20px;
+    }
+}
+ 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+    #div1{
+        width: 800px;
+    }
+    .image{
+        margin-left: 40px;
+        height: 400px;
+        width: 330px;
+    }
+    header{
+    padding-bottom: 20px;
+    }
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1000px) {
+    #div1{
+        width: 1500px;
+        height: 780px;
+        margin-left: 150px;
+    }
+    .image{
+        margin-left: 40px;
+        height: 700px;
+        width: 630px;
+    }
+    header{
+    padding-bottom: 20px;
+    }
+    h2{
+        font-size: 20px;
+        margin-left: 200px;
+    }
 }
