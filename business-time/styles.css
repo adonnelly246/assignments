@@ -63,6 +63,8 @@
 
      width: 600px;
      height: 45px;
+     margin-top: 20px;
+     margin-bottom: 40px;
    
  }
  #div1{
@@ -102,6 +104,8 @@
     font-weight: bold;
 font-family: 'Montserrat', sans-serif; ;
 }
+
+
 h2{
 
     font-family:  'Dancing Script', cursive;
@@ -111,30 +115,25 @@ h2{
     padding-bottom: 0px;
 }
 
+p{
+    margin-left: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    
+}
 
+#flowers{
+    margin-bottom: 40px;
+    display: grid;
+    padding: 10px;
+}
 
-
-.flowers{
+.flowersList{
     list-style-type: none;
     padding: 20px;
   
-
-  
 }
-
-.fall{
-
-padding: 0px;
-position: relative;
-margin: 10px;
-font-family: 'Montserrat', sans-serif;
-font-size: 15px;
-font-weight: bold;
-font-style: italic;
-
-}
-
-
 
  /*mobile */
 
@@ -158,9 +157,20 @@ header{
    margin-left: 25px;
    margin-bottom: 15px;
 }
+h1{
+    margin-left: 50px;
+    width: 450px;
+}
 h2{
     padding:15px;
     margin-left: 30px;
+}
+
+#flowers{
+    margin-left: 35px;
+}
+p{
+    margin-left: 60px;
 }
 } 
 
@@ -183,12 +193,24 @@ header{
    margin-left: 25px;
   
 }
+h1{
+    margin-left: 50px;
+    width: 450px;
+}
 h2{
     padding:15px;
     margin-left: 30px;
 }
+#flowers{
+    height:600px;
+    width: 400px;
+    margin-left: 60px;
+}
+p{
+    margin-left: 70px;
+}
 } 
-} 
+ 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
@@ -203,14 +225,29 @@ h2{
     header{
     padding-bottom: 20px;
     }
+    h1{
+        margin-left: 70px;
+        width: 450px;
+    }
+    #flowers{
+        height:600px;
+        width: 400px;
+        margin-left: 60px;
+    }
+    p{
+        margin-left: 70px;
+    }
 }
  
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    
+  .navbar{
+      margin-left: 80px;
+      width: 900px;;
+  }
     #div1{
-        width: 800px;
+        width: 700px;
     }
     .image{
         margin-left: 40px;
@@ -220,15 +257,26 @@ h2{
     header{
     padding-bottom: 20px;
     }
-
+    h1{
+        margin-left: 100px;
+        width: 450px;
+    }
+    #flowers{
+        height:760px;
+        width: 700px;
+        margin-left: 200px;
+    }
+    p{
+        margin-left: 250px;
+    }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1000px) {
     #div1{
-        width: 1500px;
+        width: 900px;
         height: 780px;
-        margin-left: 150px;
+        margin-left: 100px;
     }
     .image{
         margin-left: 40px;
@@ -238,8 +286,20 @@ h2{
     header{
     padding-bottom: 20px;
     }
+    h1{
+        margin-left: 200px;
+        width: 450px;
+    }
     h2{
         font-size: 20px;
         margin-left: 200px;
+    }
+    #flowers{
+        height:800px;
+        width: 600px;
+        margin-left: 300px;
+    }
+    p{
+        margin-left: 350px;
     }
 }
