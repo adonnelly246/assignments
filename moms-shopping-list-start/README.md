@@ -35,8 +35,23 @@ Passing criteria: Demo to an instructor
 
 An instructor or TA will sit with you for a demonstration of this project. They will be assessing your proficiency in the following areas:
 
-    -Difference between web app and web site
+        -Difference between web app and web site-
+    Website-~ one-way informational feeds and do not allow viewers to interact or communicate back to the site.
+    WebApp-~ websites with functionality and interactive elements. They are dynamic, and built for user engagement. (Gmail, Facebook, YouTube, Twitter, etc.) 
+
     -Build very basic web apps (site is functional and based on user interaction)
-    -Understand JSON
+        
+         -Understand JSON-
+    ~JSON stands for JavaScript Object Notation
+    ~JSON is a lightweight data interchange format
+    ~JSON is language independent * The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written  in any programming language. 
+    ~JSON is "self-describing" and easy to understand
+
+        JSON Syntax Rules
+    ~Data is in name/value pairs
+    ~Data is separated by commas
+    ~Curly braces hold objects
+    ~Square brackets hold arrays
+
 
 Passing off this project completes the Web Applications, Level 1 branch of the skills tree.
