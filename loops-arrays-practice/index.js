@@ -1,10 +1,14 @@
 
 
-
 //Loop through the following array and count how many "computers" there are. Log the final count:
 var officeItems = ["stapler", "monitor", "computer", "desk", "lamp", "computer", "lamp", "stapler", "computer",  "computer"]
 
-
+for (let i = 0; i < officeItems.length; i++){
+  if ([i] === "computer"){
+    var compCount =+ 1;
+    console.log(compCount)
+  }
+};
 
 //Loop through the following array and log to the console "old enough" if they are 18 or older, and "not old enough" if thy aren't 18.
 var peopleWhoWantToSeeMadMaxFuryRoad = [
@@ -31,42 +35,29 @@ var peopleWhoWantToSeeMadMaxFuryRoad = [
     }
   ] 
 
-/*Optional bonus challenges for this problem
+for ( let i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
+  if (peopleWhoWantToSeeMadMaxFuryRoad.age >= 18){
+    var oldEnough = peopleWhoWantToSeeMadMaxFuryRoad.name + " is old enough to see the movie."
 
-#1
-
-Log to the console a personalized message like:
-
-Mike is not old enough to see Mad Max
-
-or
-
-Madeline is old enough to see Mad Max.
-
-
-#2
-
-Check to see if the movie goer is a male or female for an even more personalized message.
-
-Mike is not old enough to see Mad Max Fury Road, don't let HIM in.
-
-or
-
-Madeline is old enough. SHE'S good to see Mad Max Fury Road. 
-
-
+      if (peopleWhoWantToSeeMadMaxFuryRoad.gender === "female"){
+      oldEnough += " She's good to see Mad Max Fury Road."
+    }
+      else{
+      oldEnough += " He's good to see Mad Max Fury Road."
+    }
+    console.log(oldEnough);
+  }
+  else if (peopleWhoWantToSeeMadMaxFuryRoad.age < 18){
+    var notOldEnough = peopleWhoWantToSeeMadMaxFuryRoad.name + " is NOT old enough to see Mad Max"
+    if(peopleWhoWantToSeeMadMaxFuryRoad.gender === "female"){
+      notOldEnough += " Don't let her in."
+    }
+    else{
+      notOldEnough += " Don't let him in."
+    }
+    console.log(notOldEnough);
+  }
+  
+}
 
 
-~~~Optional Bonus challenge~~~
-
-Imagine you have a button that toggles a light on and off. Loop through the following array of numbers and toggle the button the numbers of times for each number. The array [2, 3, 2] would toggle the button 7 times.
-
-The light is off to start with. Log to the console whether or not the light is on at the end.
-
-Sample Arrays:
-
-[2, 5, 435, 4, 3] // "The light is on"
-[1, 1, 1, 1, 3]   // "The light is on"
-[9, 3, 4, 2]      // "The light is off"
-
-*/
