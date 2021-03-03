@@ -3,12 +3,14 @@
 //Loop through the following array and count how many "computers" there are. Log the final count:
 var officeItems = ["stapler", "monitor", "computer", "desk", "lamp", "computer", "lamp", "stapler", "computer",  "computer"]
 
-for (let i = 0; i < officeItems.length; i++){
-  if ([i] === "computer"){
-    var compCount =+ 1;
-    console.log(compCount)
+for (var i = 0; i < officeItems.length; i++){
+  if (officeItems[i] == "computer"){
+    var compCount = 0
+    compCount + 1;  
   }
-};
+  
+}
+console.log(compCount);
 
 //Loop through the following array and log to the console "old enough" if they are 18 or older, and "not old enough" if thy aren't 18.
 var peopleWhoWantToSeeMadMaxFuryRoad = [
@@ -35,29 +37,31 @@ var peopleWhoWantToSeeMadMaxFuryRoad = [
     }
   ] 
 
-for ( let i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
-  if (peopleWhoWantToSeeMadMaxFuryRoad.age >= 18){
-    var oldEnough = peopleWhoWantToSeeMadMaxFuryRoad.name + " is old enough to see the movie."
+for ( var i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
 
-      if (peopleWhoWantToSeeMadMaxFuryRoad.gender === "female"){
+  if (peopleWhoWantToSeeMadMaxFuryRoad[i].age >= 18){
+    var oldEnough = peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is old enough."
+
+      if (peopleWhoWantToSeeMadMaxFuryRoad[i].gender === "female"){
       oldEnough += " She's good to see Mad Max Fury Road."
     }
       else{
       oldEnough += " He's good to see Mad Max Fury Road."
     }
-    console.log(oldEnough);
+   
   }
-  else if (peopleWhoWantToSeeMadMaxFuryRoad.age < 18){
-    var notOldEnough = peopleWhoWantToSeeMadMaxFuryRoad.name + " is NOT old enough to see Mad Max"
-    if(peopleWhoWantToSeeMadMaxFuryRoad.gender === "female"){
-      notOldEnough += " Don't let her in."
+   else if (peopleWhoWantToSeeMadMaxFuryRoad[i].age < 18){
+    var oldEnough = peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is NOT old enough to see Mad Max"
+
+    if(peopleWhoWantToSeeMadMaxFuryRoad[i].gender === "female"){
+      oldEnough += " Don't let her in."
     }
     else{
-      notOldEnough += " Don't let him in."
+      oldEnough += " Don't let him in."
     }
-    console.log(notOldEnough);
+    
   }
-  
+  console.log(oldEnough);
 }
 
 
