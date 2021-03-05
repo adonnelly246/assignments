@@ -4,7 +4,7 @@ const form = document.airlineForm;
 
   
 
-form.addEventListener('submit', function (event){
+form.addEventListener('submit', function(event){
     event.preventDefault()
     let firstName = form.firstName.value;
     let lastName = form.lastName.value;
@@ -27,7 +27,7 @@ form.addEventListener('submit', function (event){
       
     //alert box 
 
-    alert("First Name: " + firstName + "\nLast Name: " + lastName + "\nAge: " + age + "\nGender: " + gender + "\nTravel Location: " + location + "\nDiet: " + diet + "\nAwesome, now if you die, it won't be an accident..")
+    alert(`First Name:  ${firstName} \n Last Name:  ${lastName}  \n Age:   ${age} \n Gender:  ${gender}  \n Travel Location:  ${location} Diet: ${diet}  \n Awesome, now if you die, it won't be an accident..`)
   
 });
 
