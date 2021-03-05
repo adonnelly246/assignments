@@ -7,7 +7,7 @@ function largest([...array]){   // ...
 for(let i = 0; i < array.length; i ++){
     //if current index value > value -- MaxNum = current inex value// try using .reduce()
     if (array[i] > maxNum) {
-        maxNum = arr[i];
+        maxNum = array[i];
       }
  
 }
@@ -18,17 +18,17 @@ console.log(maxNum)
 
 lettersWithStrings(["#3", "$$$", "C%4!", "Hey!"], "!") // => ["C%4!", "Hey!"]
 
-function lettersWithStrings([...strArray, ...char]){
-    let newArray = [];
-    for(let i = 0; i < strArray.length; i++){
-    //is index = char? -> add index to newArray
-    if(strArray[i] === char){
-        newArray.push(char) 
+function lettersWithStrings([...strArray], ...chars) {
+    let newArray = []
+    for(let i = 0; i < strArray.length; i++){ 
+    if(strArray[i].includes(chars, -1)){  //if index value = char add value to newArray
+      newArray.push(strArray[i]) 
     }
-
-    }
-  console.log(newArray)
+  
+ }
+console.log(newArray)
 }
+
 
 //Write a function that takes a num1 and num2 and returns whether num1 is divisible by num2.
 
