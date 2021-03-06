@@ -1,10 +1,8 @@
 const form = document.airlineForm;
-//const submit = document.getElementByID(submit);
-//var query = document.querySelector();
 
-  
 
-form.addEventListener('submit', function(event){
+
+form.addEventListener('submit', event =>{
     event.preventDefault()
     let firstName = form.firstName.value;
     let lastName = form.lastName.value;
@@ -24,10 +22,13 @@ form.addEventListener('submit', function(event){
         diet.push(form.paleo.value);
     }
 
-      
+  
     //alert box 
-
     alert(`First Name:  ${firstName} \n Last Name:  ${lastName}  \n Age:   ${age} \n Gender:  ${gender}  \n Travel Location:  ${location} Diet: ${diet}  \n Awesome, now if you die, it won't be an accident..`)
   
+    form.lastName.value = "" 
+    form.firstName.value = "" 
+    form.age.value = "" 
 });
+
 
