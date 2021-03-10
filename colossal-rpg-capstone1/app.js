@@ -1,66 +1,136 @@
 const readLineSync = require('readline-sync');
-let hp = 100;
-let enemyHp = 100;
-const randItemList = ["Golden Vannilla Paste", "Perfectly Ripened Orange", "Royal Honey"]
-let randItem = [Math.floor(Math.random() * randItemList)]
-
-
-const attack = Math.floor(Math.random(1, 50))
-
-// readLineSync.question("What will you do? Pres 'w' to walk or 's' to search for ingredients") 
+//need to add attack dmg tracker,  hp tracker, fix enemy===[i] if else statements(not sure they are itterating), and push item to inventory when defeat enemy.
 
 //greet, get name and store it
-console.log("                            ~----The Ultimate Baking Showdown----~     ")
+console.log("                                    ~----The Ultimate Baking Showdown----~     ")
 console.log("Greetings traveler! Welcome to the land of Crumbs, a magical place filled with evil ingredients that only the most acomplished bakers can beat into submission and make into delicious treats. In order to alowed entry into our capital city of Oreo Macadamia, you must first prove your worthyness in a baking competition, judged by none other than our queen bee, Marmalade Sugar Crumble. First things first, you need to register so your name can be placed on the roster for entry. What should we call you? ")
 const name = readLineSync.question("Please enter your name: ") 
+let gameOver = false
+//function for chance of enemy appearing
+const EnemyAppearChance = max => Math.floor(Math.random() * Math.floor(max));
 
-//ask to walk? 
-console.log(`excellent, ${name}! Let's get cookin' /n To begin your journey, you must get the ingredients.In order to gather them, you must travel to the descolace known as 'The General Store'`)
-const walk = readLineSync.question("Enter 'w' to walk: ") 
-while (walk === "w"){
-EnemyEncounter( name, chance, attack, enemyChoice,randItem, enemyHp, hp)
+  //function for getting random enemy from enemy object
+  function EnemyListChoice(enemyList){
+    let enemyChoice = enemyList
+  return Math.floor(Math.random() * Math.floor(enemyChoice))
+  }
+  //function to randomly get run chance
+    function CanRun(max){     
+        let canRun = Math.floor(Math.random() * Math.floor(max))
+        if(canRun == 1){
+        let escape = `You are unable to run away, ${name}, Prepare for an attack!`
+        return  escape
+        }
+        else{
+         let escape = `You were able to escape, and continue walking forward.`
+         return  escape
+        } 
 }
-function EnemyEncounter( name, chance, attack, enemyChoice, randItem, enemyHp, hp){
-//if enemy appears --> user chooses to run or attack
+//function to keep track of dmg
+function AttackDmg(min,max){
+    return Math.floor(Math.random() * Math.floor(min,max));
+  }
 
-  let chance = Math.random(0,1)
-if (chance === 1){    //enemies appear
-let option = readLineSync.question(" Enter 'r' to run or 'a' to attack: ")
-const enemyList = ["Evil Eggs","Mutant Butter", "Rough Sugar", "Monstrous Flour" ]
-const enemyChoice = [Math.floor(Math.random() * enemyList.length)];
+//player object
+const playerInfo = [
+  { name: name,
+    hp: 100,
+    inventory: []}  //when get item, push to playerInfo.inventory[i]
+]
 
-  if (enemyChoice === "Evil Eggs"){
-    console.log("You make your way forward, but a group of Evil Eggs ambushes you from behind!")
-    return option 
-}
-else if(enemyChoice === "Mutant Butter"){
-   console.log("When you walk forward, you catch a wild Mutant Butter off guard and it charges toward you")
-   return option
-   
+//enemies object
+const enemyList = [
+  { name: "Evil Eggs",
+    hp: 90,
+    intro:  "You make your way forward, but a group of Evil Eggs ambushes you from behind!",
+    attack: [10, 5, 2, 1]
+  },
+  { name: "Mutant Butter",
+  hp: 150,
+  intro:  "When you walk forward, you catch a wild Mutant Butter off guard and it charges toward you",
+  attack: [10, 5, 2, 1]
+},
+  {
+    name: "Rough Sugar",
+    hp: 150,
+    intro: "You move slowly, but a Rough Sugar Beast senses your presence and readies an attack",
+    attack: [20, 10, 5, 2]
+  },
+  {
+    name: "Monsterous Flour",
+    hp: 200,
+    intro: "You search for what seems like miles, but you see no ingredients anywhere. You decide to rest before moving any further. Just as you sit down, you realise why the ingredients are scarce, but it is too late! The Monsterous Flour has already spotted you and begins its attack!",
+    attack: [40, 20, 30, 10]
+  }
 
-}
-else if(enemyList === "Rough Sugar"){
-console.log("You move slowly, but a Rough Sugar Beast senses your presence and readies an attack")
-return option
+]
 
+
+
+//ask to walk or check stats 
+console.log(`Excellent, ${name}! Let's get cookin' ! To begin your journey, you must get the ingredients. In order to get all of the ones you need, you must travel to the descolace known as 'The General Store'`)
+while (gameOver === false){
+let walk = readLineSync.question("Enter 'w' to walk or 's' to see your inventory and stats: ")    
+//function for the attack or run
+function IfOption(option) {
+    if(option === "r"){
+    let canEscape = CanRun(2)
+    console.log(canEscape)
+    walk
+    } 
+    else{
+        //option == a
+        console.log("attack function")
+    }      
 }
-else{
- console.log("You search for what seems like miles, but you see no ingredients anywhere. You decide to rest before moving any further. Just as you sit down, you realise why the ingredients are scarce, but it is too late! The Monsterous Flour has already spotted you and begins its attack!")
- chance = 0
- return option
-}
-}
+
+if(walk === "s"){
+    console.log(playerInfo) //return playerstats
+    walk = readLineSync.question("Enter 'w' to walk or 's' to see your inventory and stats: ") 
+         }
+    
+   while (walk ==="w") {
+ let chance = EnemyAppearChance(2); //roll enemy encounter chance
+    if (chance === 1){    //if enemies appear
+    let enemy = EnemyListChoice(enemyList.name); //choose enemy
+        if (enemy === [0]){  console.log("enemy0 eggs")
+           console.log(enemyList[0].intro)
+            option = readLineSync.question(" Enter 'r' to run or 'a' to attack: ")
+            IfOption(option)
+            } 
+        else if(enemy === [1]){console.log("enemy1 butter")
+        console.log(enemyList[1].intro)
+            option = readLineSync.question(" Enter 'r' to run or 'a' to attack: ")
+            IfOption(option)
+            }
+        else if(enemy === [2]){console.log("enemy2 sugar")
+        console.log(enemyList[2].intro)
+        option = readLineSync.question(" Enter 'r' to run or 'a' to attack: ")
+        IfOption(option)
+        }
+        else{ console.log("enemy3 flour")
+        console.log(enemyList[3].intro)
+        option = readLineSync.question(" Enter 'r' to run or 'a' to attack: ")
+        IfOption(option)
+        }
+    
+    }
+    else{   console.log("NO enemy")//enemies don't appear
+    console.log("You continue your search for the perfect ingredients, but find nothing. ")
+    walk = readLineSync.question("Enter 'w' to walk forward and continue your search or 's' to see your stats: ") 
   
-
+    }
+    if(walk === "s"){
+        console.log(playerInfo) //return playerstats
+        walk = readLineSync.question("Enter 'w' to walk or 's' to see your inventory and stats: ") 
+             }
 }
-if(chance === 0){   //enemies don't appear
-console.log("You continue your search for the perfect ingredients")
 return walk
 }
 
-//if player kills enemy = +50 HP + special item
-if (hp > 0 && enemyHp <= 0){
-  console.log(`Excellent work, ${name}, you have defeated the evil ingredient. You search through the rubble and find ${randItem}`)
-  hp += 20
-  }
 
+if (gameOver == true){
+    console.log("you died")
+}
+
+    

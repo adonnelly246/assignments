@@ -11,6 +11,7 @@ Project Requirements:
 
     The enemy is random (can be chosen out of a minimum of 3 different enemy names)
     The user can decide to attack or run
+    
     If attacking, a random amount of damage will be delt between a min and max
     If running, there will be a 50% chance of escaping
     After the player attacks or runs the enemy attacks back for a random damage amount
