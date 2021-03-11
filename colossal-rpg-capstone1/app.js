@@ -1,5 +1,5 @@
 const readLineSync = require('readline-sync');
-//need player dmg and attack, fix hp adding instead of subtracting after first iteration, push random item to inventory when defeat enemy + HP,  stay at enemy index until dead or player dead,(give different message on return to loop)  check dmg track(so far it's returning rand index form enemyList attack array-good) 
+
 
 //greet, get name and store it
 console.log("                                    ~----The Ultimate Baking Showdown----~     ")
@@ -9,6 +9,9 @@ let gameOver = false
 //function for chance of enemy appearing
 const EnemyAppearChance = max => Math.floor(Math.random() * Math.floor(max));
 
+const randomNumber = function (max,min){
+return Math.floor((Math.random() * max )+ min)
+}
   //function for getting random enemy from enemy object
   function EnemyListChoice(...enemyList){
   return Math.floor(Math.random() * Math.floor(enemyList.length))
@@ -52,7 +55,10 @@ console.log(playerInfo)
 let playerInfo = 
   { name: name,
     hp: 100,
-    inventory: []} ; //when get item, push randItem to playerInfo.inventory
+    inventory: [],
+    maxAttack: randomNumber(15, 1),
+    minAttack: randomNumber(10, 1)
+  } ; //when get item, push randItem to playerInfo.inventory
 
 
 //enemies object
@@ -60,24 +66,28 @@ const enemyList = [
   { name: "Evil Eggs",
     enemyHp: 90,
     intro:  "You make your way forward, but a group of Evil Eggs ambushes you from behind!",
-    attack: [1, 3, 2, 5]
+    maxAttack: randomNumber(15, 1),
+    minAttack: randomNumber(10, 1)
   },
   { name: "Mutant Butter",
   enemyHp: 150,
   intro:  "When you walk forward, you catch a wild Mutant Butter off guard and it charges toward you",
-  attack: [1, 5, 2, 10]
+  maxAttack: randomNumber(15, 1),
+    minAttack: randomNumber(10, 1)
 },
   {
     name: "Rough Sugar",
     enemyHp: 150,
     intro: "You move slowly, but a Rough Sugar Beast senses your presence and readies an attack",
-    attack: [2, 10, 5, 20]
+    maxAttack: randomNumber(15, 1),
+    minAttack: randomNumber(10, 1)
   },
   {
     name: "Monsterous Flour",
     enemyHp: 200,
     intro: "You search for what seems like miles, but you see no ingredients anywhere. You decide to rest before moving any further. Just as you sit down, you realise why the ingredients are scarce, but it is too late! The Monsterous Flour has already spotted you and begins its attack!",
-    attack: [10, 20, 30, 40]
+    maxAttack: randomNumber(15, 1),
+    minAttack: randomNumber(10, 1)
   }
 
 ]
@@ -115,7 +125,7 @@ if(walkOrStats== "s"){
          }
     
  let chance = EnemyAppearChance(2); //roll enemy encounter chance
- while (walkOrStats ==="w"|| CanRun(max, option) === CanRun(2, "r")) {
+ while (walkOrStats ==="w") {
     if (chance === 1){    //if enemies appear
     let enemy = EnemyListChoice(enemyList);  //choose random enemy from list 
     if (enemy === 0){ 
