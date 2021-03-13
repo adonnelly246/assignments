@@ -1,5 +1,4 @@
 const readLineSync = require('readline-sync');
-//-- sometimes runs into enemy and then asks to walk instead of attack
 
 //greet, get name and store it
 console.log("                                    ~----The Ultimate Baking Showdown----~     ")
@@ -74,26 +73,6 @@ while(deadEnemies.length < 4 && playerInfo.hp > 0){
                      console.log(`The enemy attacks you for ${damageDeltToPlayer} points of damage`)
                      console.log("You now have " + playerInfo.hp + " hp.")
 
-                        if(enemy.hp <= 0 && playerInfo.hp >= 0){  
-                            let plusHP = playerInfo.hp + 50    
-                            let randItem = getRandItem(RandItemList)
-                            playerInfo.inventory.push(randItem)
-                            console.log(`Wonderful job, ${name}! You have defeated the enemy and now have ${plusHP} hp. You also gain a ${randItem} `)
-
-                    //filter out enemy after hp= 0 
-                     deadEnemies = EnemyList.filter(function(enemy){
-                        return enemy.hp <= 0
-                    })
-                        if(deadEnemies.length === EnemyList.length) {
-                            console.log("                                    ~----You Have Defeated all of the Enemies----~     ")
-                            console.log("You make your way to the competition area and bake the most delicious treats from the corpses of the monster ingredients and Queen Marmalade crowns you the winner.")
-                            console.log(`Congratulations, ${name}! You are now a citizen of Macadamia and one of the best bakers we have seen!`)
-                            break;
-                        }  
-                    }
-                    else if(playerInfo.hp <= 0){
-                        console.log(`How unfortunate, ${name}, you have died! Too bad no one will know what delicious treat you were going to make`)
-                    }
                  }  
                  else if(option === "s"){ 
                     console.log(`Name: ${playerInfo.name}, Hp: ${playerInfo.hp}, Inventory: ${playerInfo.inventory}`) //return playerstats
@@ -108,6 +87,28 @@ while(deadEnemies.length < 4 && playerInfo.hp > 0){
                  console.log(`You were able to escape! Continue walking forward.`)
                  }
             } 
+            }
+            
+            if(enemy.hp <= 0 && playerInfo.hp >= 0){  
+                let plusHP = playerInfo.hp + 50    
+                let randItem = getRandItem(RandItemList)
+                playerInfo.inventory.push(randItem)
+                console.log(`Wonderful job, ${name}! You have defeated the enemy and now have ${plusHP} hp. You also gain a ${randItem} `)
+                RandItemList.splice(RandItemList.indexOf(randItem), 1)
+                    
+                //filter out enemy after hp= 0 
+                 deadEnemies = EnemyList.filter(function(enemy){
+                 return enemy.hp <= 0
+                 })  
+                if(deadEnemies.length === EnemyList.length) {
+                    console.log("                                    ~----You Have all of the Ingredients----~     ")
+                    console.log("You make your way to the competition area and bake the most delicious treats from the corpses of the monster ingredients and Queen Marmalade crowns you the winner.")
+                    console.log(`Congratulations, ${name}! You are now a citizen of Macadamia and one of the best bakers we have seen!`)
+                    break;
+                }  
+            }
+            else if(playerInfo.hp <= 0){
+                console.log(`How unfortunate, ${name}, you have died! Too bad no one will know what delicious treat you were going to make`)
             }   
         }
         else{ //enemies don't appear
@@ -117,6 +118,8 @@ while(deadEnemies.length < 4 && playerInfo.hp > 0){
     else if(walkORStats === "s" || option === "s"){ 
         console.log(`Name: ${playerInfo.name}, Hp: ${playerInfo.hp}, Inventory: ${playerInfo.inventory}`) //return playerstats
     }
+
+    
  
 }
 
