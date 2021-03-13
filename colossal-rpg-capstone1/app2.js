@@ -1,4 +1,5 @@
 const readLineSync = require('readline-sync');
+//---could filter out items so that player doesn't get the same one twice
 
 //greet, get name and store it
 console.log("                                    ~----The Ultimate Baking Showdown----~     ")
@@ -16,13 +17,18 @@ const randomNumber = function (max,min){
 //player object
 let playerInfo = 
 { name: name,
-  hp: 200,
+  hp: 1200,
   inventory: [],
   maxAttack: randomNumber(35, 1),
   minAttack: randomNumber(15, 1)
-} ; 
+}  
 
-
+// const createRandItemList =  function(num, name) {
+//     return { 
+//      id: num,
+//      name: name,
+//      }
+//  }
  function getRandItem(itemList){
  let itemIndex = randomNumber(4, 1)
  let item = itemList[itemIndex]
@@ -41,14 +47,15 @@ const createEnemy1 =  function(num, hp, name, intro) {
 }
 
 
-  const RandItemList = ["Bottle of Gold Standard Vannilla", "Perfectly Ripened Orange", "Jar of Royal Honey","Jar of Plump Plum Preserves"]
+ let RandItemList = [" Bottle of Gold Standard Vannilla", " Perfectly Ripened Orange", " Jar of Royal Honey", " Jar of Plump Plum Preserves"]
+//   let RandItemList = [createRandItemList(1, " Bottle of Gold Standard Vannilla"), createRandItemList(2, " Perfectly Ripened Orange"), createRandItemList(3, "Jar of Royal Honey" ), createRandItemList(4, " Jar of Plump Plum Preserves")]
 
 //array and pass through enemies, and intro
 let EnemyList = [createEnemy1(1, 100, "Mutant Butter",  "When you walk forward, you catch a wild Mutant Butter off guard and it charges toward you!"), createEnemy1(2, 80, "Evil Eggs", "You make your way forward, but a pack of Evil Eggs ambushes you from behind!"), createEnemy1(3, 150,"Rough Sugar",  "You move slowly through the desolace to avoid being noticed, but a Rough Sugar Beast senses your presence and readies an attack!"), createEnemy1(4, 180, " Monstrous Flour", "You search for what seems like miles, but you don't encounter any ingredients. You decide to rest before moving any further. Just as you sit down, you feel the ground beneath you shake. You understand why the ingredients are scarce, but it is too late; the Monstrous Flour has already spotted you and begins its attack!")]
-let deadEnemies = [];
 
 
-while(deadEnemies.length < 4 && playerInfo.hp > 0){
+
+while(EnemyList.length > 0 && playerInfo.hp > 0){
     const walkORStats = readLineSync.keyIn('Hit w to walk or hit s to check inventory and stats: ', {limit: ['w','s'] }); 
     if(walkORStats === "w"){
         //1in 3 chance for enemy
@@ -90,25 +97,35 @@ while(deadEnemies.length < 4 && playerInfo.hp > 0){
             }
             
             if(enemy.hp <= 0 && playerInfo.hp >= 0){  
-                let plusHP = playerInfo.hp + 50    
-                let randItem = getRandItem(RandItemList)
-                playerInfo.inventory.push(randItem)
-                console.log(`Wonderful job, ${name}! You have defeated the enemy and now have ${plusHP} hp. You also gain a ${randItem} `)
-                RandItemList.splice(RandItemList.indexOf(randItem), 1)
-                    
+                 playerInfo.hp + 50    
+                 let randItem = getRandItem(RandItemList)
+                 playerInfo.inventory.push(randItem)
+                console.log(`Wonderful job, ${name}! You have defeated the enemy and gain 50 hp. `)
+                console.log(`You also gain a ${randItem}`)
+                // //filter out items
+                // RandItemList = RandItemList.filter(function(randItem){
+                //     return randItem !== RandItemList
+                //     })  
+                //     if(RandItemList.length === 0){
+                //         playerInfo.hp + 50
+                //         console.log("You have all of the special items! You gain an additional 50 hp")
+                //     }
+                
+                
+
                 //filter out enemy after hp= 0 
-                 deadEnemies = EnemyList.filter(function(enemy){
-                 return enemy.hp <= 0
+                 EnemyList = EnemyList.filter(function(enemy){
+                 return enemy.hp > 0
                  })  
-                if(deadEnemies.length === EnemyList.length) {
-                    console.log("                                    ~----You Have all of the Ingredients----~     ")
-                    console.log("You make your way to the competition area and bake the most delicious treats from the corpses of the monster ingredients and Queen Marmalade crowns you the winner.")
+                if( EnemyList.length === 0) {
+                    console.log("                                    ~----You Have Gathered all of the Ingredients----~     ")
+                    console.log("You make your way to the competition area and bake the most delicious treats from the corpses of the monster ingredients. Queen Marmalade carefully tatses all of the competitors' creations and crowns you the winner.")
                     console.log(`Congratulations, ${name}! You are now a citizen of Macadamia and one of the best bakers we have seen!`)
                     break;
                 }  
             }
             else if(playerInfo.hp <= 0){
-                console.log(`How unfortunate, ${name}, you have died! Too bad no one will know what delicious treat you were going to make`)
+                console.log(`How unfortunate, ${name}, you have died! Too bad no one will know what delicious treat you were going to make with the corpses of the monster ingredients. `)
             }   
         }
         else{ //enemies don't appear
