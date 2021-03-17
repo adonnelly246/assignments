@@ -1,0 +1,38 @@
+
+#body{
+    display: inline-block;
+}
+
+#add{
+padding: 20px;
+margin: 10px;
+background-color: #D2F1E4;
+}
+#addOne, #addTwo{
+    width: 40px;
+}
+#addBtn{
+  width: 20px;
+text-align: center;
+padding: 5px;
+}
+#sub{
+    padding: 20px;
+    margin: 10px;
+    background-color: #818AA3;
+}
+    
+#subOne, #subTwo{
+    width: 40px;
+}
+
+
+#mult{
+    padding: 20px;
+    margin: 10px;
+    background-color: #437962;
+ }
+
+#multOne, #multTwo{
+   width: 40px;
+}
