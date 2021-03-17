@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>travel form</title>
+</head>
+<body id="body">
+    <h1>Only Three Places Airlines</h1>
+    <p>Please Fill out this Form</p>
+    <form name="form" id="aform">
+        <div id ="firstName">
+        <label>First Name</label>
+        <input type="text" name="firstName">
+        </div>
+
+    <div id ="lastName">
+        <label>Last Name</label>
+        <input type="text" name="lastName">
+        </div>
+        <div id ="age">
+        <label>Age</label>
+        <input type="digit" name="age">
+    </div>
+ 
+    <div id ="radio">
+        <input type="radio" name="gender" value="male" id="male">
+        <label>Male</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <label>Female</label>
+        <input type="radio" name="gender" value="none" id="none">
+        <label>Prefer not to say</label>
+    </div>
+
+    <div id ="destin">
+        <label>Choose a Destination</label>
+        <select name="destination">
+            <option value="New York">New York</option>
+            <option value="Atlanta">Atlanta</option>
+            <option value="Bermuda Triangle">Birmuta Triangle</option>
+        </select>
+    </div>
+
+    <div id ="diet-pref">
+        <label>Choose you dietary preferences</label>
+        <input class="diet" type="checkbox" name="vegan" id="vegan" value="vegan">
+        <label >Vegan</label>
+        <input class="diet" type="checkbox" name="gluten" id="gluten" value="gluten-free">
+        <label>Gluten-free</label>
+        <input class="diet" type="checkbox" name="carnivore" id="carnivore" value="carnivore">
+        <label>Carnivore</label>
+    </div>
+
+        <button type="submit" id="button">Submit</button>
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>

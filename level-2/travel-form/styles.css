@@ -1,0 +1,20 @@
+#radio, #destin, #diet-pref, #firstName, #lastName, #age{
+    padding: 10px;
+    margin: 20px;
+}
+
+h1, p{
+    text-align: center;
+    background-color: #b7e4c7;
+    border: 2px solid #8daf99;
+    border-radius: 15px;
+    width: 800px;
+    margin-left: 80px;
+}
+
+#body{
+    background-color: #adb5bd;
+}
+form{
+   text-align: center;
+}
