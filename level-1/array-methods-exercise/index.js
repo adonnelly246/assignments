@@ -4,7 +4,7 @@ var vegetables = ["carrot", "tomato", "pepper", "lettuce"];
 
 
 //Remove the last item from the vegetable array.
-var removeLastVeg = vegetables.pop();
+ vegetables.pop();
 console.log(vegetables)
 
 //Remove the first item from the fruit array.
@@ -23,7 +23,7 @@ console.log(fruit)
 console.log(vegetables.length)
 
 //Add that number to the end of the vegetable array.
-vegetables.push(vegetables.length);
+ vegetables.push(vegetables.length);
 console.log(vegetables)
  
 //Put the two arrays together into one array. Fruit first. Call the new Array "food".

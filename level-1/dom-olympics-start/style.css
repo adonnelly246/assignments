@@ -1,0 +1,48 @@
+#header, 
+#words {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+    color: black;
+}
+.myName {
+    font-weight: bold;
+    font-size: 15px;
+    color: peachpuff;
+ 
+}
+.h2{
+    text-align: center;
+   font-weight: bold;
+}
+.messages {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 10px 0px;
+    padding: 20px;
+}
+
+#main {
+    margin: 30px;
+    border: 1px solid black;
+    padding: 10px;
+    
+}
+
+.message {
+    padding: 5px;
+}
+
+.right, #right {
+    align-self: flex-end;
+    background-color: lightblue;
+   margin-bottom: 20px;
+}
+
+.left, #left {
+    align-self: flex-start;
+    background-color: burlywood;
+    margin-bottom: 20px;
+}
