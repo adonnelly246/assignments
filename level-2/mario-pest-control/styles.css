@@ -1,0 +1,30 @@
+#goomba, #bob-omb, #cheepcheep{
+    display: inline-grid;
+    margin: 0;
+    padding: 0;
+}
+#totalCoin{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 30px;
+}
+body{
+    background:url(images/brick2.jpg) rgba(144, 174, 230, 0.774) ;
+}
+#pests{
+    display: grid;
+    width: 50px;
+    margin-left: 200px;
+}
+
+button{
+    margin: 10px;
+    margin-left: 250px;
+}
+label{
+    padding: 7px;
+}
