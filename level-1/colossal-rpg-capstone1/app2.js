@@ -17,7 +17,7 @@ const randomNumber = function (max,min){
 //player object
 let playerInfo = 
 { name: name,
-  hp: 200,
+  hp: 250,
   inventory: [],
   maxAttack: randomNumber(35, 1),
   minAttack: randomNumber(15, 1)
@@ -55,7 +55,7 @@ let EnemyList = [createEnemy(1, 100, "Mutant Butter",  "When you walk forward, y
 
 
 
-while(EnemyList.length > 0 && playerInfo.hp > 0){
+notDead: while(EnemyList.length > 0 && playerInfo.hp > 0){
     const walkORStats = readLineSync.keyIn('Hit w to walk or hit p to print inventory and stats: ', {limit: ['w','p'] }); 
     if(walkORStats === "w"){
         //1in 3 chance for enemy
@@ -65,6 +65,17 @@ while(EnemyList.length > 0 && playerInfo.hp > 0){
             
            while(playerInfo.hp > 0 && enemy.hp > 0){
                let option = readLineSync.keyIn(`Hit 'a' to attack, 'r' to run, hit 'p' or type 'print' to print stats and inventory: `, {limit: 'arp' })
+            if(option === "r"){ // === "r"
+            //randnumGen 50/50
+            let canRun = Math.floor(Math.random() * 2) + 1
+                if (canRun < 2){
+                console.log (`You are unable to run away, ${name}, Prepare for an attack!`)
+                }
+                else{
+                 console.log(`You were able to escape! Continue walking forward to gather more ingredients.`)
+                 continue notDead;
+                 }
+            }
                  if (option === "a") {
                     //damage to enemy
                      const damageDeltToEnemy = randomNumber(playerInfo.maxAttack, playerInfo.minAttack)
@@ -81,19 +92,10 @@ while(EnemyList.length > 0 && playerInfo.hp > 0){
                      console.log("You now have " + playerInfo.hp + " hp.")
 
                  }  
-                 else if(option === "s"){ 
+                 else if(option === "p"){ 
                     console.log(`Name: ${playerInfo.name}, Hp: ${playerInfo.hp}, Inventory: ${playerInfo.inventory}`) //return playerstats
                  }
-            else if(option === "r"){ // === "r"
-            //randnumGen 50/50
-            let canRun = Math.floor(Math.random() * 2) + 1
-                if (canRun < 2){
-                console.log (`You are unable to run away, ${name}, Prepare for an attack!`)
-                }
-                else{
-                 console.log(`You were able to escape! Continue walking forward to .`)
-                 }
-            } 
+             
             }
             
             if(enemy.hp <= 0 && playerInfo.hp >= 0){  
