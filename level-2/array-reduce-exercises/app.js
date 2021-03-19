@@ -1,7 +1,11 @@
 // 1) Turn an array of numbers into a total of all the numbers
 
 function total(arr) {
-   // your code here
+  const totalNum = arr.reduce(function(final,num){
+      final += num
+      return final
+   })
+return totalNum
 }
 
 console.log(total([1,2,3])); // 6
@@ -9,7 +13,9 @@ console.log(total([1,2,3])); // 6
 // 2) Turn an array of numbers into a long string of all those numbers.
 
 function stringConcat(arr) {
-   // your code here 
+ const numString =  arr.reduce((final, num) =>final += num.toString())
+ 
+   return numString
 }
 
 console.log(stringConcat([1,2,3])); // "123"
@@ -17,7 +23,13 @@ console.log(stringConcat([1,2,3])); // "123"
 // 3) Turn an array of voter objects into a count of how many people voted
 
 function totalVotes(arr) {
-   // your code here    
+     const votes = arr.reduce(function(final, voter){
+        if(voter.voted){
+           final++
+        }
+        return final
+     }, 0)
+     return votes
 }
 
 var voters = [
@@ -36,12 +48,16 @@ var voters = [
 ];
 console.log(totalVotes(voters)); // 7
 
-//     Note: You don't necessarily have to use reduce for this, so try to think of multiple ways you could solve this.
+// //     Note: You don't necessarily have to use reduce for this, so try to think of multiple ways you could solve this.
 
 // 4) Given an array of all your wishlist items, figure out how much it would cost to just buy everything at once
 
 function shoppingSpree(arr) {
-   // your code here    
+   const cost = arr.reduce(function(final, item){
+      final += item.price 
+      return final
+   }, 0)   
+   return cost
 }
 
 var wishlist = [
@@ -57,7 +73,11 @@ console.log(shoppingSpree(wishlist)); // 227005
 // 5) Given an array of arrays, flatten them into a single array
 
 function flatten(arr) {
-   // your code here    
+ const combine = arr.reduce(function(final, array){
+   final = final.concat(array)
+   return final
+  })
+  return combine   
 }
 
 var arrays = [
@@ -68,7 +88,7 @@ var arrays = [
 
 console.log(flatten(arrays)); // ["1", "2", "3", true, 4, 5, 6];
 
-    Note: Take a look at Array.concat() to help with this one
+   //  Note: Take a look at Array.concat() to help with this one
 
 // 6) Given an array of potential voters, return an object representing the results of the vote
 
@@ -90,7 +110,9 @@ var voters = [
 ];
 
 function voterResults(arr) {
-   // your code here
+   const results = arr.reduce(function(final, voter){
+      
+   })
 }
 
 console.log(voterResults(voters)); // Returned value shown below:
