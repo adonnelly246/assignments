@@ -109,10 +109,30 @@ var voters = [
     {name: 'Zack', age: 19, voted: false}
 ];
 
+
 function voterResults(arr) {
    const results = arr.reduce(function(final, voter){
-      
-   })
+      if(voter.age <= 25 || voter.age >= 18){
+     final = young += 1
+       if(voter.voted){
+          voter.yVoted += 1
+       }
+      }
+      if(voter.age <= 35 || voter.age >= 26){
+        final = middle +=1
+         if(voter.voted){
+           voter.mVoted+=1
+         }
+      }
+      if(voter.age <=36 || voter.age >= 55){
+        final= oldest += 1
+         if(voter.voted){
+            voter.oVoted+= 1
+         }
+      }
+      return final
+   }, {})
+   return results
 }
 
 console.log(voterResults(voters)); // Returned value shown below:
