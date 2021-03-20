@@ -49,8 +49,8 @@ let strList =[]
 function sortedOfAge(arr){
  const result = arr.reduce(function(final,person){
     if(person.age > 18){
-      final = olderThan.push(person)
-      final = `<li> ${final} </li>`
+      final = olderThan.push("<li>"+ person.firstName + person.lastName + " is "+ person.age + "</li>")
+    //   final = `<li> ${final} </li>`
     }
   olderThan.sort((a,b) => (a.lastName > b.lastName) ? 1 : -1 )
     return olderThan

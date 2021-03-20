@@ -9,8 +9,11 @@
 }
 ul{
     list-style: none;
+    position: relative;
     padding-left: 0;
+    padding: 50px;
     margin-left: 30px;
+    margin:  50px;;
 }
 body{
     background:url(images/brick2.jpg) rgba(144, 174, 230, 0.774) ;
