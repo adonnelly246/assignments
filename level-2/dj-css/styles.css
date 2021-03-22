@@ -1,0 +1,88 @@
+#container{
+    display: inline-grid;
+    position: relative;
+    margin: 50px;
+    margin-left: 300px;
+}
+#box1{
+    border: 5px solid black;
+    height: 100px;
+    width:100px;
+    background-color: rgb(189, 140, 235);
+    transition: background-color 1s, width 1s, linear ;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1.5s;
+}
+#box1:hover{
+background-color: darkslategrey;
+width: 400px;
+height: 400px;
+}
+#box2{
+    border: 5px solid black;
+    height: 100px;
+    width:100px;
+    background-color: rgb(101, 216, 201);
+    transition: border 1s, margin  1s, linear ;
+    transition-timing-function: ease-in;
+    transition-delay: 3s;
+}
+#box2:hover{
+    border: 0px;
+    position: relative;
+    margin-left: 400px;
+
+}
+#box3{
+    border: 5px solid black;
+    height: 100px;
+    width:100px;
+    background-color: rgb(104, 53, 63);
+    transition: border 1s, height  1.5s, linear ;
+    transition-delay: 0.5s;
+}
+#box3:hover{
+    border: 5px dashed deeppink;
+    height: 200px;   
+}
+#box4{
+    border: 5px solid black;
+    height: 100px;
+    width:100px;
+    background-color: rgb(30, 30, 87);
+    transition: background-color 2s, opacity  0.5s, height 5ms, width 3s, linear ;
+    transition-timing-function: ease-out;
+    transition-delay: 2.5s;
+}
+#box4:hover{
+   background-color: rgb(106, 173, 240);
+   height: 500px;
+   width: 500px;
+   opacity: 0.5;
+}
+#box5{
+    border: 5px solid black;
+    height: 100px;
+    width:100px;
+    background-color: rgb(68, 78, 49);
+    transition: border 3s, border-radius  0.5s, linear ;
+    transition-delay: 2s;
+}
+#box5:hover{
+    border-radius: 20%;
+    border-bottom:10px solid firebrick;
+}
+#box6{
+    border: 5px solid black;
+    height: 100px;
+    width:100px;
+    background-color: rgb(120, 194, 102);
+    transition: height 1s, width  5s, border 2.5s, linear ;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s;
+}
+#box6:hover{
+    height: 50px;
+    width: 200px;
+    border-top: 10px dashed darkorange;
+}
