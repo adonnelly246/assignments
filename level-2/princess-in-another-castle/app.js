@@ -1,39 +1,47 @@
+//what it is to be a player/all properties/what player does
 class Player {
-    constructor(name, totalCoins,status,hasStar,setName,gotHit,gotPowerUp,gameActive,addCoin,print){
-        name =""
-        totalCoins =0
-        status = new String("Powered Up", "BIG", "small", "Dead")
-        hasStar = false
+    constructor(name, totalCoins,status,hasStar,setName){
+        this.name = name
+        this.totalCoins = totalCoins
+        // this.status = ["Powered Up", "BIG", "small", "Dead"]
+        this.hasStar = hasStar
         gameActive = true
-        let setName = function(namePicked){
+        playerInfo = [
+            name = this.name,
+            status = this.status,
+            totalCoins = this.totalCoins
+        ]
+       const setName = namePicked =>{
+            this.name = namePicked
             return namePicked
-        }
-        this.gotHit = function(){
-
-        }
-        this.gotPowerUp = function(){
-
-        }
+        };
+        gotHit = (status,hasStar) =>{
+                if (hasStar){
+                    this.status = "Powered up"
+                }
+                else{
+                    this.status = "Dead"
+                    gameActive = false
+                }
+        };
+        gotPowerUp = status =>{
+            this.status = "Powered up"
+        };
        
-        let addCoin = function(){
-
-        }
-        let print = function(name,totalCoins, status){
-            playerInfo = [
-                this.status
-
-            ]
-        }
+        addCoin = totalCoins =>{
+            this.totalCoins +=1
+        };
+        print= playerInfo=> console.log(`Name: ${playerInfo.name} Total Coins: ${playerInfo.totalCoins} Status:${playerInfo.status}`)
     }
 }
 //use class to create an object
-const player = new Player()
+const player1 = new Player("Mario", 0, "small", false, "Mario")
 
 
 // put the random range function inside a setInterval function that ends after gameActive === false
-let timer = setInterval(() => {
-    function randRange(value){
-        //do rand math to value(0, 1,2)
+const randTime = setInterval(() => {
+    function randRange(min,max){
+        //do rand math 
         
         if(value === 0){
             gotHit()
@@ -50,4 +58,6 @@ let timer = setInterval(() => {
 
 //call print method on object
 Player.print(player)
+
+
 
