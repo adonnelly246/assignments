@@ -1,0 +1,46 @@
+{
+	"appetizers": [{
+			"fried jalapeno poppers": ["jalapenos","cornmeal batter", "cream cheese", "bacon"],
+			"description": "descript"
+		},
+		{
+			"parmesan crisps": ["aged parmesan", "basil parsley salt"],
+			"description": "descript"
+		}
+	],
+	"cold sandwiches": [{
+			"ham and cheese": ["ham", "white cheddar cheese", "cuban bread"],
+			"description": "descript"
+		},
+		{
+			"cold itallian": ["salami", "proscutto", "ham", "provalone cheese", "itallian loaf"],
+			"description": "descript"
+		}
+	],
+	"hot sandwiches": [{
+			"meatball sandwitch": ["turkey and pork meatballs", "marinara sauce", "provalone cheese", "itallian loaf"],
+			"description": "descript"
+		}, {
+			"hot itallian": ["salami", "ham", "turkey", "provalone cheese", "itallian loaf"],
+			"description": "descript"
+		},
+		{
+			"tuna melt": ["tuna salad", "aged cheddar", "cuban loaf"],
+			"description": "descript"
+		}
+	],
+	"deserts": [{
+			"brownie": ["chocolate", "flour", "sugar"],
+			"description": "descript"
+		},
+		{
+			"chocolate pie": ["chocolate pudding", "whipped cream", "chocolate shavings", "chocolate cookie crust"],
+			"description": "descript"
+		},
+		{
+			"vannilla ice cream": ["vannilla bean", "cream", "milk"],
+			"description": "descript"
+		}
+	],
+	"drinks": ["strawberry lemonade", "sprite", "pepsi", "water"]
+}
