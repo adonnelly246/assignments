@@ -1,63 +1,85 @@
 //what it is to be a player/all properties/what player does
 class Player {
-    constructor(name, totalCoins,status,hasStar,setName){
+    gameActive = true
+    constructor(name){
         this.name = name
-        this.totalCoins = totalCoins
-        // this.status = ["Powered Up", "BIG", "small", "Dead"]
-        this.hasStar = hasStar
-        gameActive = true
-        playerInfo = [
-            name = this.name,
-            status = this.status,
-            totalCoins = this.totalCoins
-        ]
-       const setName = namePicked =>{
-            this.name = namePicked
-            return namePicked
-        };
-        gotHit = (status,hasStar) =>{
-                if (hasStar){
-                    this.status = "Powered up"
+        this.totalCoins = [0]
+        this.status = "small"
+        this.hasStar = false
+       
+    }
+        //use namePicked to pass in "mario" or "luigi" //----------------------may not need/redundant
+    //    setName(namePicked){
+    //        if (namePicked=== "Mario"){
+    //            this.name = "Mario"
+    //        }
+    //        else if(namePicked === "Luigi"){
+    //         this.name = "Luigi"
+    //        }
+          
+    //     }
+        gotHit(){
+                if (hasStar===true){
+                    this.status = "BIG"
                 }
                 else{
                     this.status = "Dead"
-                    gameActive = false
+                    this.gameActive = false
+                    console.log("you died")
                 }
-        };
-        gotPowerUp = status =>{
+        }
+      gotPowerUp(){
             this.status = "Powered up"
-        };
+            this.hasStar = true
+            console.log("You got a Star!")
+        }
        
-        addCoin = totalCoins =>{
-            this.totalCoins +=1
-        };
-        print= playerInfo=> console.log(`Name: ${playerInfo.name} Total Coins: ${playerInfo.totalCoins} Status:${playerInfo.status}`)
-    }
-}
-//use class to create an object
-const player1 = new Player("Mario", 0, "small", false, "Mario")
+     addCoin(){
+            this.totalCoins = + 1
+        }
+      print() {console.log(`Name: ${this.name} \n Total Coins: ${this.totalCoins} \n Status:${this.status}`)}
+ 
 
+
+}
 
 // put the random range function inside a setInterval function that ends after gameActive === false
 const randTime = setInterval(() => {
-    function randRange(min,max){
-        //do rand math 
-        
-        if(value === 0){
-            gotHit()
-        }
-        else if(value === 1){
-            gotPowerUp()
-        }
-        else {
-            addCoin()
-        }
-        }
-}, gameActive ===false);
+//call setName?
+
+   console.log("intervalstart")
+   const randRange = (min,max) =>{Math.floor(Math.random() * (max-min)+ min) }
+  
+//-----------------
+ if (this.gameActive === true){
+    if(value === 0){
+       gotHit()
+       console.log("hit")
+    }
+    else if(randRange(0,3) === 1){
+       gotPowerUp()
+       console.log("powerup")
+    }
+    if (randRange(0,3) === 2) {
+       addCoin()
+     console.log("coin+")
+    } 
+ }
+    else if(this.gameActive === false){
+        console.log("end")
+    }
 
 
+      
+   //use class to create an object
+const player1 = new Player("Mario", "Luigi")
+const player2 = new Player ("Luigi")
 //call print method on object
-Player.print(player)
+player2.print()         //-------------------------- setName
+ 
+}, 3000);
+
+
 
 
 
