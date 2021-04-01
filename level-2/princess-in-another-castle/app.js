@@ -44,41 +44,46 @@ class Player {
 }
 
 // put the random range function inside a setInterval function that ends after gameActive === false
-const randTime = setInterval(() => {
-//call setName?
-
-   console.log("intervalstart")
-   const randRange = (min,max) =>{Math.floor(Math.random() * (max-min)+ min) }
-  
-//-----------------
- if (this.gameActive === true){
-    if(value === 0){
-       gotHit()
-       console.log("hit")
-    }
-    else if(randRange(0,3) === 1){
-       gotPowerUp()
-       console.log("powerup")
-    }
-    if (randRange(0,3) === 2) {
-       addCoin()
-     console.log("coin+")
-    } 
- }
-    else if(this.gameActive === false){
-        console.log("end")
-    }
-
-
-      
-   //use class to create an object
-const player1 = new Player("Mario", "Luigi")
-const player2 = new Player ("Luigi")
-//call print method on object
-player2.print()         //-------------------------- setName
  
-}, 3000);
+setInterval(() => {
 
+    console.log("intervalstart")
+  function randRange(min,max)  {
+      let randNum = Math.floor(Math.random() * (max-min)+ min)
+      return randNum  
+  };
+ 
+ let rand = randRange(0,3)
+ console.log(rand)
+  if (this.gameActive){
+     if(rand === 0){
+        gotHit()
+        console.log("hit")
+        setInterval()
+     }
+     else if(rand=== 1){
+        gotPowerUp()
+        console.log("powerup")
+        setInterval()
+     }
+     if (rand === 2) {
+        addCoin()
+      console.log("coin+")
+     } 
+  }
+     else if(this.gameActive === false){
+         console.log("end")
+     }
+ 
+    
+       
+    //use class to create an object
+ const player1 = new Player("Mario", "Luigi")
+ const player2 = new Player ("Luigi")
+ //call print method on object
+ player2.print()         //-------------------------- setName
+  
+ }, 3000);
 
 
 
