@@ -1,32 +1,36 @@
 const form = document.form
-
+//axios.get(url/id) --find
 function getData(){
     axios.get("https://api.vschool.io/adonnelly246/todo")
-        .then(res => listData(res.data.title))
+        .then(res => createTodo(res.data))
         .catch(err => alert(err))
+        console.log(createTodo(res.data))
 }
 
-
+//creates html elements
 function createTodo(todo){
-    //insert todo into DOM 
        clearList()
            for(let i = 0; i < todo.length; i++){
                const li = document.createElement('li')
                li.textContent = todo[i].title
                document.getElementById('list').appendChild(li)
-           }
-       
 
-       function clearList(){
-           const el = document.getElementById('list')
-           while(el.firstChild){
-               el.removeChild(el.firstChild)
+               // use appendChild to add checkbox, edit, and delete buttons to each new li
+               const check = document.createElement('checkbox')
+               li.appendChild(check)
+               const editBtn = document.createElement('button')
+               editBtn.textContent = "Edit"
+               li.appendChild(editBtn)
            }
-       }
-
  }
 
-
+  //clears list on page 
+ function clearList(){
+    const elemnt = document.getElementById('list')
+    while(elemnt.firstChild){
+        elemnt.removeChild(elemnt.firstChild)
+    }
+}
 
 form.addEventListener('submit', function (e){
     e.preventDefault()
@@ -43,24 +47,26 @@ form.addEventListener('submit', function (e){
    form.description.value =""
    form.image.value =""
 
+   //use getData to display title on html
+   getData()
 
     //add it to the database using axios.post and createTodo function
     axios.post("https://api.vschool.io/adonnelly246/todo", newItem)
-    .then(response =>  createTodo())
+    .then(response =>  createTodo(response))
     .catch(error => alert(error))             //show an alert when error occurs
 
-    //use getData to display title on html
-   getData()
-
-   // use appendChild to add edit and delete buttons to each new li(for loop)
+console.log(newItem) 
+console.log(response)
 })
 
 //each todo has checkbox to be marked compelte/incomplete(when checked, update database)
-//axios.get(url/id) --find
 //axios.put(url/id)  -update
 
-// li.addEventListener('checked', event =>{
-
+// check.addEventListener('checked', event =>{
+//         //when checked, change completed to 'true'
+//        axios.put("https://api.vschool.io/adonnelly246/todo/<li id>")
+//      .then(response => id.completed = true)
+//    .catch(error => alert(error))
 // })
 
 
