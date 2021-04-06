@@ -2,25 +2,30 @@ const form = document.form
 //axios.get(url/id) --find
 function getData(){
     axios.get("https://api.vschool.io/adonnelly246/todo")
-        .then(res => createTodo(res.data))
+        .then(response => createTodo(response.data))
         .catch(err => alert(err))
-        console.log(createTodo(res.data))
+        clearList() 
 }
 
 //creates html elements
-function createTodo(todo){
-       clearList()
+function createTodo(todo){         
+   
            for(let i = 0; i < todo.length; i++){
                const li = document.createElement('li')
                li.textContent = todo[i].title
                document.getElementById('list').appendChild(li)
-
+                
                // use appendChild to add checkbox, edit, and delete buttons to each new li
-               const check = document.createElement('checkbox')
+               const check = document.createElement('input')
+               check.type = 'checkbox'
+               check.name =todo[i].title
+               check.setAttribute('id','check')
                li.appendChild(check)
+              
                const editBtn = document.createElement('button')
                editBtn.textContent = "Edit"
-               li.appendChild(editBtn)
+               editBtn.setAttribute('id','edit')
+               li.appendChild(editBtn)  
            }
  }
 
@@ -48,15 +53,14 @@ form.addEventListener('submit', function (e){
    form.image.value =""
 
    //use getData to display title on html
+  
    getData()
-
+  
     //add it to the database using axios.post and createTodo function
     axios.post("https://api.vschool.io/adonnelly246/todo", newItem)
     .then(response =>  createTodo(response))
-    .catch(error => alert(error))             //show an alert when error occurs
-
-console.log(newItem) 
-console.log(response)
+    .catch(error => alert(error + "eventListener errPost"))             //show an alert when error occurs
+   
 })
 
 //each todo has checkbox to be marked compelte/incomplete(when checked, update database)

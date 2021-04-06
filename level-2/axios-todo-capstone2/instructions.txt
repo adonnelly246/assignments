@@ -12,21 +12,7 @@ A createTodo function that takes one todo and inserts it to the DOM is very user
 
 Use postman to get those first few todos in there with some images so you can style your list!
 
-var newTodo = {
-    title: "Todo One", 
-    description: "The first todo",
-    price: 200,
-    imgUrl:  "https://images-na.ssl-images-amazon.com/images/I/61Rsbltq72L._AC_SX522_.jpg",
-    completed: false 
-};
- {
-        "completed": true,
-        "title": "item one",
-        "description": "todo 1",
-        "price": 400,
-        "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/61Rsbltq72L._AC_SX522_.jpg",
-        "sessionId": "adonnelly246"
-    }
+
 
 
 Part 2 - POST
