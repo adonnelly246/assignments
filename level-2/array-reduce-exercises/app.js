@@ -108,31 +108,45 @@ var voters = [
     {name: 'Jeff', age: 30, voted: true},
     {name: 'Zack', age: 19, voted: false}
 ];
-
-let young =0
-let middle =0
-let oldest =0
+let youngVotes =0
+let middleVotes =0
+let midPeople = 0
+let oldestVotes=0
+let oldestPeople =0
+let youngPeople =0
 function voterResults(arr) {
-   const results = arr.reduce(function(final, voter){
-      if(voter.age <= 25 || voter.age >= 18){
-        final =   young ++
-      //  if(voter.voted){
-      //     voter.yVoted += 1
-      //  }
+   const results = arr.reduce((final, voter) =>{
+      if(voter.age <= 25 && voter.age >= 18){
+        youngPeople += 1
+        if(voter.voted === true){
+         youngVotes +=1
       }
-    else if(voter.age <= 35 || voter.age >= 26){
-       final=   middle ++
-         // if(voter.voted){
-         //   voter.mVoted+=1
-         // }
+      
       }
-    else if(voter.age <=36 || voter.age >= 55){
-       final=  oldest++
-         // if(voter.voted){
-         //    voter.oVoted+= 1
-         // }
+    if(voter.age <= 35 && voter.age >= 26){
+      midPeople += 1
+      if(voter.voted===true){
+         middleVotes +=1
       }
-      return final
+      }
+   if(voter.age >=36 && voter.age <= 55){
+       oldestPeople += 1
+        if(voter.voted=== true){
+         oldestVotes +=1
+      }
+      else{
+         return final
+      }
+      }
+      return {
+         
+         numYoungVotes: youngVotes,
+         numYoungPeople: youngPeople,
+         numMidVotesPeople: middleVotes,
+         numMidsPeople: midPeople,
+         numOldVotesPeople: oldestVotes,
+         numOldsPeople:  oldestPeople
+      }
    }, 0)
    return results
 }
