@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
     <title>Axios Todo</title>
-    <link href="styles.css" type="stylesheet">
+   
 </head>
 <body>
+    <h1>Todo List 101</h1>
+    <div id="middle">
     <form name="form" id="formId">
-        <h1>Add a Todo</h1>
-        <div><label>Name</label> <input type="text" name="title" > </div>
+       
+        <div><label>Name</label> <input type="text" name="title" class="input" > </div>
       
-        <div> <label>Price</label> <input type="number" name="price"></div>
+        <div> <label>Price</label> <input type="number" name="price" class="input"></div>
       
-       <div> <label>Description</label> <input type="text" name="description"></div>
+       <div> <label>Description</label> <input type="text" name="description" class="input"></div>
       
-       <div><label>Image Url</label><input type="text" name="image"></div>
-        <button>Submit</button>
+       <div><label>Image Url</label><input type="text" name="image" class="input"></div>
+        <button id="submit">Submit</button>
     </form>
+    </div>
+    <h2>Todo's: </h2>
     <div id="list">
        
         

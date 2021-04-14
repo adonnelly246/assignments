@@ -2,7 +2,6 @@
 const form = document.form
 //axios.get(url/id) --find
 function getData(){
-    clearList()
     axios.get("https://api.vschool.io/adonnelly246/todo")
         .then(response => createTodo(response.data))
         .catch(err => alert(err))    
@@ -32,7 +31,7 @@ const editFunc = function(todo,updatedInfo){
         title: updatedInfo
     }
     axios.put("https://api.vschool.io/adonnelly246/todo/" + todo._id, updtTodo)
-    .then(response => alert("Todo updated!"))
+    .then(response => alert(`${todo} updated to ${updtTodo}!`))
     .catch(error => alert(error))
 }
 
@@ -45,9 +44,10 @@ const editFunc = function(todo,updatedInfo){
 }
 
 //creates html elements
-function createTodo(todo){         
+function createTodo(todo){    
            for(let i = 0; i < todo.length; i++){
                const li = document.createElement('li')
+               li.setAttribute('id', 'li')
                li.textContent = todo[i].title
                document.getElementById('list').appendChild(li)
                 
@@ -90,13 +90,19 @@ function createTodo(todo){
                li.appendChild(editBtn)  
 
                editBtn.addEventListener('click', e =>{
+                   let todoTitle = editBtn.parentElement.textContent
                 editBtn.parentElement.contentEditable = true
-                editBtn.textContent = "Save"        //create a save button instead so that can change the info to input boxes
+                editBtn.textContent = "Save"  //create a save button instead so that user can change the info to input boxes
               
                 editBtn.addEventListener('click', e=>{
                  editBtn.parentElement.contentEditable = false
                  editBtn.textContent = "Edit"
-                 editFunc(todo[i],todo[i].textContent) 
+                 //editFunc(todo[i],todo[i].textContent) 
+                    let updatedTitle = editBtn.parentElement.textContent
+                 axios.put("https://api.vschool.io/adonnelly246/todo", {title: updatedTitle })
+                 .then(response => editFunc(todoTitle,updatedTitle ), )
+                 .catch(error => alert(error)) 
+
                 })
                       
                })
@@ -109,6 +115,7 @@ function createTodo(todo){
 //eventlistener for submit button
 form.addEventListener('submit', function (e){
     e.preventDefault()
+    clearList()
     //get user input and store it
     const newItem = {
         title: form.title.value,
@@ -123,16 +130,14 @@ form.addEventListener('submit', function (e){
    form.description.value =""
    form.image.value =""
 
-    
-   //use getData to display title on html
-   getData()
-
-    //add it to the database using axios.post and createTodo function
-    axios.post("https://api.vschool.io/adonnelly246/todo", newItem)
-    .then(response =>  createTodo(response))
-    .catch(error => alert(error))             
    
-    
+      //add input to the database using axios.post 
+      axios.post("https://api.vschool.io/adonnelly246/todo", newItem)
+      .then(response => getData())
+      .catch(error => alert(error)) 
+
+ 
+                 
 })
 
 
