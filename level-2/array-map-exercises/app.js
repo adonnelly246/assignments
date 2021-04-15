@@ -1,7 +1,4 @@
 //1) Make an array of numbers that are doubles of the first array
-
-  
-
 function doubleNumbers(arr){
     const result = arr.map(num => num *2)
    return result
