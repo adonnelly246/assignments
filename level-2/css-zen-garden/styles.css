@@ -12,6 +12,8 @@ grid-row-gap: 0px;
 padding: 10px;
 /* font-family: 'icomoonregular','libre_baskervilleregular','libre_baskervilleitalic','julius_sans_oneregular'; */
 }
+
+
 .container > div {
     border: solid black 2px;
     padding: 10px;
@@ -56,14 +58,35 @@ background-image: url("images/huntington.jpg");}
 @media (max-width: 900px){
     /* use this media query to help these two cells drop to the bottom when screens are smaller */
     .authors {
-        
+  grid-area: 8 / 1 / 7 / 3; 
+
     }
     .links {
-
+        /* grid-template-columns: 1fr; */
+        grid-area: 3 / 2 / 4 / 3;;
+    }
+    .footer{
+        grid-area: 9 / 1 / 8 / 3;
     }
     /* container could use some help so that it's children are full screen width */
     .container {
-        
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, 0.1fr);
+    }
+    .div2 {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+    .div3{
+        grid-area: 3 / 1 / 4 / 2; 
+    }
+    .div4{
+        grid-area: 4 / 1 / 5 / 3;
+    }
+    .div5{
+        grid-area: 5 / 1 / 6 / 3; 
+    }
+    .div7{
+        grid-area: 6 / 1 / 7 / 3; 
     }
 }
 
