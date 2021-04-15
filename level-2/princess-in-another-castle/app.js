@@ -32,9 +32,9 @@ class Player {
             
         }
        
-     addCoin(totalCoins){
+     addCoin(){
         console.log("coin+")
-      totalCoins=  this.totalCoins += 1
+        this.totalCoins += 1
         
         }
 
@@ -48,7 +48,7 @@ let intervalFunc = setInterval(() => {
     //use class to create an object
     let player1 = new Player("Mario")
     // let player2 = new Player("Luigi")
-    
+
  //call print method on object
  player1.print()    
  // player2.print()
@@ -66,8 +66,7 @@ let intervalFunc = setInterval(() => {
         player1.gotPowerUp()
      }
      else if (rand === 2) {
-        player1.addCoin(player1.totalCoins)
-    
+        player1.addCoin()
      } 
   }
 
@@ -78,6 +77,10 @@ let intervalFunc = setInterval(() => {
          
      
  }, 5000);
+
+
+
+
 
 
 
