@@ -11,6 +11,10 @@ import React from "react"
     else if(props.price >= 1000){
       pricePlus$ = "$$$" + props.price
     }
+
+    if(props.timeToGo ==="Spring"){
+      
+    }
       return(
           <div class= "card">
               <h3>{props.place}</h3>
