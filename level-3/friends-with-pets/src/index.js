@@ -2,6 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 import FriendList from "./FriendList"
 
+
+
 ReactDOM.render(<FriendList />, document.getElementById("root"))
 
 // Build a simple React app that has a <FriendList /> component, a <Friend /> component and a <Pet /> component.
