@@ -1,0 +1,28 @@
+.style {
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin-left: 20px;
+    }
+
+ .squares{
+        align-items: center;
+        margin: 0;
+        width: 400px;
+        height: 250px;
+        border: 2px solid black;
+        background-color: white;
+    }
+.buttonsContainer{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2, 1fr) ;
+}
+.button{
+    padding: 3px;
+    margin: 5px;
+    }
