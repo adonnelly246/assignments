@@ -1,7 +1,9 @@
 import React from "react"
 import BlogPost from "./BlogPost"
 import Footer from "./Footer"
-const Data=
+import Navbar from "./Navbar"
+import Header from "./Header"
+const data=
 [
     {
         title: "Man must explore, and this is exploration at its greatest",
@@ -30,7 +32,8 @@ const Data=
 
 
 function BlogList(){
-    const blogPostArr = Data.map(post => {
+
+    const blogPostArr = data.map(post => {
         return( 
         < BlogPost key= {post.id}
           title = {post.title}
@@ -41,14 +44,16 @@ function BlogList(){
         )
      })
 
+    
      return(
          <div>
-             <header>{header}
-             <nav>{navbar}</nav>
+             <header>
+                <nav><Navbar/></nav>
+                <Header />
              </header>  
              {blogPostArr}
 
-             <footer>{footer}</footer>
+             <footer><Footer/></footer>
          </div>
      )
  }

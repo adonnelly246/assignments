@@ -11,15 +11,14 @@
 
 // For now, we're using hard-coded data (seen below), but eventually you'll be able to pull this data from an API instead.
 
-// But until we get there, feel free to use .map() on the following array of data:
+// But until we get there, feel free to use .map() on the array of data
 import React from "react"
 import ReactDOM from "react-dom"
 import BlogList from "./BlogList"
 
-ReactDOM.render(<Header />, document.getElementById("header"))
-ReactDOM.render(<Navbar />, document.getElementById("nav"))
 ReactDOM.render(<BlogList />, document.getElementById("root"))
-ReactDOM.render(<Footer />, document.getElementById("footer"))
+
+
 // Passing Criteria
 // The site needs to work, in such that the data from this array through React components and displayed to the user.
 
