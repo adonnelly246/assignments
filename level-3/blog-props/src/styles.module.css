@@ -1,0 +1,159 @@
+body{
+    font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 20px;
+    color: #212529;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    background-color: #fff;
+
+    
+}
+#root{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+}
+.navContainer{
+    position: relative;
+    color: white;
+    font-size: 20px;
+   font-weight: 500;
+
+}
+.nav1{
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+.nav2{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    list-style: none;
+    margin-left: 300px;
+   
+    
+}
+.li{
+    display: inline;
+    padding-left: 10px;
+
+}
+
+.headerContainer{
+
+  background-image: url("head-img.jpg"); 
+  position: relative; 
+  height: 400px;
+  width:auto;
+  max-width: 1000px;
+  background-size: contain;
+  padding: 0;
+  margin: 0;
+  background-repeat: no-repeat;
+
+
+  font-size: 20px;
+ font-weight: 500;
+ /* text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; */
+}
+
+.mainHeader{
+margin-left: 200px;
+position: absolute;
+top: 40%;
+left: 40%;
+transform: translate(-50%, -50%);
+font-size: 60px;
+padding: 0;
+color: white;
+}
+
+.header{
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+margin-left: 200px;
+font-weight: 200;
+color: white;
+padding-top: 0;
+}
+
+.post {
+    display: grid;
+    grid-template-columns: 0.5fr repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding-bottom: 0;
+    }
+    
+.titles { 
+    grid-area: 1 / 2 / 5 / 4; 
+    margin-top: 0;
+  width: 700px;
+}
+
+.title{
+    font-size: 35px;
+}
+
+.subTitle{
+font-size: 25px;
+font-weight: 250;
+}
+.author{
+    font-style: italic;
+}
+.footer {
+    grid-area: 5 / 2 / 6 / 4; 
+    text-align: center;
+}
+
+.copywright{
+font-size: 14px;
+font-style: italic;
+}
+.olderPosts{
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    background-color: teal;
+    width: 150px;
+    height: 50px;
+}
+
+
+@media (min-width: 576px){
+    .headerContainer, .navContainer {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 992px){
+    .navContainer, .headerContainer {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px){
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 576px){
+     .container {
+        max-width: 540px;
+    }
+    .container{
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

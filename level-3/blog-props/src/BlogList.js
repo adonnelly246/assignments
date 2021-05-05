@@ -1,8 +1,11 @@
 import React from "react"
 import BlogPost from "./BlogPost"
-import Footer from "./Footer"
 import Navbar from "./Navbar"
+import Footer from "./Footer"
 import Header from "./Header"
+import styles from "./styles.module.css"
+
+
 const data=
 [
     {
@@ -46,14 +49,12 @@ function BlogList(){
 
     
      return(
-         <div>
+         <div >
              <header>
-                <nav><Navbar/></nav>
-                <Header />
-             </header>  
-             {blogPostArr}
-
-             <footer><Footer/></footer>
+                <Header  />
+             </header> 
+             <main> {blogPostArr}</main> 
+             <Footer/>
          </div>
      )
  }
