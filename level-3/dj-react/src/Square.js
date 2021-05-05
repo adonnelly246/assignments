@@ -1,11 +1,12 @@
 import React from "react"
-import colors from "./ColorData"
+import App from "./App"
 import styles from "./styles.module.css"
 
 function Square(props){
     return(
-        <div className={styles.squares}>
-            <p color={props.colors}>Square</p>
+        
+        <div className={styles.squares} style={{backgroundColor: props.backgroundColor}}>
+            <p color={props}></p>
                   
         </div>
     )
