@@ -78,19 +78,13 @@ export const friends = [
 
 
  function FriendList(){
-    const petsOnly = friends.map(person => {
-        return( 
-        < Pet key= {person.pets[0].id}
-          name = { person.pets[0].name}
-         breed = {person.pets[0].breed}/>  
-        )
-     })
+  
     const friendsWithPets = friends.map(person => {
         return(
         <Friend key= {person.id} 
         name= {person.name} 
         age ={person.age} 
-        pets ={petsOnly}/>
+        pets ={person.pets}/>
         )
       })
      return(
