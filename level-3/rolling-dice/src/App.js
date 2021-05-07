@@ -2,44 +2,45 @@ import React, {Component} from "react"
 import DiceBox from "./DiceBox"
 import styles from "./styles.module.css"
 
- const diceRoll =   Math.floor((Math.random() * 6) + 1)
+
 class App extends Component{
 
     state ={
-        num1: 0,
-        num2: 0,
-        num3: 0,
-        num4: 0,
-        num5: 0
-    }
-    
-    handleClick =() =>{
-        this.setState()
-          return{
-            num1: diceRoll,
-            num2: diceRoll,
-            num3: diceRoll,
-            num4: diceRoll,
-            num5: diceRoll
-          }  
-        
-       
+        nums: [0,0,0,0,0]
         
     }
     
-    
+    randDiceRoll() {
+        return Math.floor(Math.random() * (6)) + 1
+    }
+    handleClick = () => {
+        this.setState(prevState => {    
+            const diceRoll =  prevState.nums.map(num => this.randDiceRoll())                                 
+             
+             console.log(diceRoll)
+                return { 
+                   nums: diceRoll
+                }
+            })
+    }
 
+    
     render() {
-        // const mappedDice = this.state.nums.map(nums => <DiceBox />)
+        const roll =  this.state.nums.map(num => this.randDiceRoll())  
         return(
-            <div>
-           
-            <DiceBox />
+            
+            <div>      
+       <h2> <DiceBox nums={roll}/>
+       <div></div>
+       <div></div>
+       <div></div>
+       <div></div>
+       </h2>
+     
             <button className={styles.button} onClick={this.handleClick}>Roll The Dice!</button>
             </div>
         )
-       
-       
+            
     }
     
 }

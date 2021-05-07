@@ -3,13 +3,16 @@ import App from "./App"
 import styles from "./styles.module.css"
 
 function DiceBox(props){
-    <div className={styles.diceBox}>
-        {props.num1}
-        {props.num2}
-        {props.num3}
-        {props.num4}
-        {props.num5}
+    return(
+        <div className={styles.diceBox}>
+       <p>{props.nums[0]}</p> 
+       <p>{props.nums[1]}</p> 
+       <p>{props.nums[2]}</p> 
+       <p>{props.nums[3]}</p> 
+       <p>{props.nums[4]}</p> 
     </div>
+    )
+  
 }
 
 export default DiceBox
