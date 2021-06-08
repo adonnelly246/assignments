@@ -9,7 +9,8 @@ class App extends Component{
         nums: [0,0,0,0,0]
         
     }
-    
+  //roll dice, store values in state -font awesome icons
+    //cdn
     randDiceRoll() {
         return Math.floor(Math.random() * (6)) + 1
     }
