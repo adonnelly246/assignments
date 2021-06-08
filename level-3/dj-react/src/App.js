@@ -43,8 +43,7 @@ partyDj=()=>{
                 }
                 else{
                     return color
-                }
-                
+                }               
             })
         }
        
@@ -60,6 +59,8 @@ rightBlue=()=>{
 leftBlue=()=>{
     this.setState(({colors}) =>({colors: colors.map((color,i) => i ===2 ? color='blue': color)}))
 }
+
+
 render() {
     const boxes = this.state.colors.map(color => <Square backgroundColor={color}/>)
 
