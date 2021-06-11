@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Color from './DisplayColors.js'
+import DisplayColors from './DisplayColors'
 import axios from 'axios'
 
 class App extends Component{
@@ -21,9 +21,13 @@ class App extends Component{
       }
 
       render(){
-          const randColor = this.state.colorsList
+          const randColor = this.state.colorsList.map(color=> color.name)
           return (
-              <div style ={{backgroundColor: {randColor}}}> </div>
+              <div style ={{backgroundColor: {randColor}}}> 
+              
+              <div><button onClick={randColor}></button></div>
+              
+              </div>
           )
       }
 
