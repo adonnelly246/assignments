@@ -1,45 +1,67 @@
 import React, {Component} from "react"
 import DiceBox from "./DiceBox"
 import styles from "./styles.module.css"
+import dice1 from "./images/dice1.jpg"
 
-
+///images and assign them to the numbers
+//bonus-click dice and have it stay
 class App extends Component{
 
     state ={
-        nums: [0,0,0,0,0]
-        
+        dice: [0,0,0,0,0,0],
+        image: null
     }
-  //roll dice, store values in state -font awesome icons
-    //cdn
+  //roll dice, store values in state 
     randDiceRoll() {
-        return Math.floor(Math.random() * (6)) + 1
+        let number = Math.floor(Math.random() * (6)) + 1
+
+        if(number === 1){
+            //display dice1
+            this.state.image = dice1
+            return number + this.state.image
+        }
+        else if(number===2){
+            //display dice2
+        }
+        else if(number===3){
+            //display dice3
+        }
+        else if(number===4){
+            //display dice4
+        }
+        else if(number===5){
+            //display dice5
+        }
+        else {
+            //display dice6
+        }
+
+        return number
     }
+
     handleClick = () => {
         this.setState(prevState => {    
-            const diceRoll =  prevState.nums.map(num => this.randDiceRoll())                                 
+            const diceRoll =  prevState.dice.map(num => this.randDiceRoll())                                 
              
              console.log(diceRoll)
                 return { 
-                   nums: diceRoll
+                   dice: diceRoll
                 }
             })
     }
 
     
     render() {
-        const roll =  this.state.nums.map(num => this.randDiceRoll())  
+        const roll =  this.state.dice.map((num) =>{ return <DiceBox key={this.state.id} dice={num}/>})  
         return(
             
-            <div>      
-       <h2> <DiceBox nums={roll}/>
-       <div></div>
-       <div></div>
-       <div></div>
-       <div></div>
+    <div>      
+       <h2> 
+           {roll}
        </h2>
      
             <button className={styles.button} onClick={this.handleClick}>Roll The Dice!</button>
-            </div>
+    </div>
         )
             
     }

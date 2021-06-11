@@ -5,11 +5,8 @@ import styles from "./styles.module.css"
 function DiceBox(props){
     return(
         <div className={styles.diceBox}>
-       <p>{props.nums[0]}</p> 
-       <p>{props.nums[1]}</p> 
-       <p>{props.nums[2]}</p> 
-       <p>{props.nums[3]}</p> 
-       <p>{props.nums[4]}</p> 
+      <div>{props.dice}<img src={props.image}></img></div>  
+      
     </div>
     )
   
