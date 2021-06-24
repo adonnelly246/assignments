@@ -1,6 +1,6 @@
 import React from "react"
 import App from "./App"
-import styles from "./styles.module.css"
+import styles from "./styles.css"
 
 function DiceBox(props){
     return(
