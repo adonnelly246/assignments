@@ -1,8 +1,13 @@
 import React from "react"
+import {ThemeConsumer} from "./themeContext"
 
-function Footer(){
+function Footer(props){
     return(
-        <footer>This is the Footer</footer>
+        <ThemeConsumer>
+            {context=>(
+                <footer className={`${context.theme}-theme`}>This is the Footer</footer>
+            )}
+        </ThemeConsumer>
 
     )
 

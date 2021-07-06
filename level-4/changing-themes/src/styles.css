@@ -1,25 +1,28 @@
 .container{
-
+    padding: 10px;
+    margin: 20px;
 }
 
 .light-theme{
+    font-family: 'Courier New', Courier, monospace;
 
 }
 .dark-theme{
-    
-}
-.header{
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    background-color: #4B4F4B;
 }
 
 .nav{
-
+    list-style: none;
 }
 
-.main{
-
+.button{
+    padding: 5px;
+    margin: 30px;
 }
 
 .footer{
-
+padding: 20px;
+padding-top: 50px;
 }

@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import {ThemeProvider} from "./themeContext"
 import App from "./App"
+import styles from './styles.css'
+
+ReactDOM.render(
+<ThemeProvider><App /></ThemeProvider>,  
+document.getElementById('root')); 
 
 /*You must:
 Provide a Dark and a Light theme
