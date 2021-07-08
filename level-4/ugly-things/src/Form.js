@@ -7,7 +7,7 @@ function Form(props){
         <ContextConsumer>
             {context=>(
                  <div>
-                 <form onSubmit = {context.SubmitForm}>
+                 <form >
                      <input 
                         type="text" 
                         placeholder="Image URL"
@@ -29,7 +29,7 @@ function Form(props){
                         value={context.description}
                         onChange={context.handleChange}
                         />
-                     <button >Submit</button>    
+                     <button onClick = {context.SubmitForm}>Submit</button>    
                  </form>
              </div>
 

@@ -9,8 +9,7 @@ class ContextProvider extends Component{
         userImages: []
     }
 
-    handleChange(event) {
-        event.preventDefault()
+    handleChange = (event) =>{
         const {name, value} = event.target
         this.setState({[name]: value})
     }
@@ -23,10 +22,10 @@ class ContextProvider extends Component{
             description: this.state.description
         }
 
-        //on submit- add to displayed images from the form input and img url
+        //on submit- add to displayed images from the form input img url
         this.setState(prevState => {
             return {
-                image: this.state.image,
+                image:"",
                 title: "",
                 description: "",
                 userImages:  [newImage, ...prevState.userImages]   
@@ -37,8 +36,8 @@ class ContextProvider extends Component{
     render() {
         return (
             <Provider value={{image: this.state.image, title: this.state.title, 
-                            description: this.state.description, SubmitForm: this.SubmitForm, 
-                            onchange: this.handleChange}}>
+                            description: this.state.description, userImages: this.state.userImages,
+                             SubmitForm: this.SubmitForm, handleChange: this.handleChange}}>
                 {this.props.children}
             </Provider>
         )

@@ -1,17 +1,13 @@
 import React from 'react'
-import {ContextConsumer} from './contextClass'
+
 
 function ImagesDisplay (props){
     return(
-        <ContextConsumer>
-            {context=>(
-                <div>
-                    <h3>{context.title}</h3>
-                    <img className="image" src={context.image} alt={context.title}/>
-                    <p>{context.description}</p>
-                </div> 
-            )}
-        </ContextConsumer>
+        <div>
+            <h3>{props.image.title}</h3>
+            <img className="image" src={props.image.image} alt={props.image.title} width="600px" height="550px"/>
+            <p>{props.image.description}</p>
+        </div> 
      
     )
 }
