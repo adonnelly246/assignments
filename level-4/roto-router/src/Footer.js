@@ -3,7 +3,11 @@ import React from "react"
 function Footer() {
     return (
         <div>
-            <p>Footer Links</p>
+            <h3>Footer logos</h3>
+            <ul>
+                <li>logo1</li>
+                <li>logo2</li>
+            </ul>
         </div>
     )
 }

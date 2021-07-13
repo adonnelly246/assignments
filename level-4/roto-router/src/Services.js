@@ -1,11 +1,18 @@
 import React from "react"
 
 function Services (){
-<div>
-    <h2>Services Content</h2>
-    <p>Lorem Ipsim </p>
-    <p>Service 2 </p>
-</div>
+    return(
+        <div>
+            <h1>Services Content</h1>
+    
+                <p>Lorem Ipsim </p>
+                <p>Service 1 </p>
+
+                <p>Lorem Ipsim </p>
+                <p>Service 2 </p>
+        </div>
+    )
+
 }
 
 export default Services
