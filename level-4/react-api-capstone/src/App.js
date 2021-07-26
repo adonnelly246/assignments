@@ -2,7 +2,8 @@ import React from "react"
 import {ContextConsumer} from "./Context"
 import FormSearch from "./FormSearch"
 import Nav from "./Nav"
-function Home(){
+
+function App(){
     return(
         <div>
             <Nav/>
@@ -20,4 +21,4 @@ function Home(){
     )
 }
 
-export default Home
+export default App

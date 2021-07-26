@@ -1,6 +1,13 @@
-import React, {Component} from "react"
+import React, {Component, useState} from "react"
 import axios from 'axios'
 const {Provider, Consumer} = React.createContext()
+
+
+// function Component (){
+//     const [newSearchArray, setNewSearchArray] = useState([])
+//     const [SavedhArray, setSavedArray] = useState([])
+
+// }
 
 class ContextProvider extends Component{
     state={
@@ -57,7 +64,7 @@ class ContextProvider extends Component{
     }
 
     NewSearch = (query)=>{
-      axios.get(`https://markerapi.com/api/v2/trademarks/trademark/`+{query}+`/status/active or all/start/an integer/username/adonnelly246/password/tLhRXZCcYJ`)
+     axios.get()//`https://markerapi.com/api/v2/trademarks/trademark/`+{query}+`/status/all/start/1/username/adonnelly246/password/tLhRXZCcYJ`)
         .then(res =>{
           this.setState({newSearchArray: [res.obj]})
         })

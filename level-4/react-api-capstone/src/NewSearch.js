@@ -1,6 +1,7 @@
 import React from "react"
 import {ContextConsumer} from "./Context"
 import FormSearch from "./FormSearch"
+import Nav from "./Nav"
 
 function NewSearch(props){
     return(
@@ -10,17 +11,12 @@ function NewSearch(props){
             <button onClick= {props.NewSearch}>SEARCH!</button>
             <h1>Results</h1>
             <h3>{props.newSearchArray.trademark}</h3>
-        <ContextConsumer>
-            {context=>(
-                context.newSearchArray.map(info => <FormSearch info={info} />)
-
-            )}
+        
                   <div> 
-                    <ul><li>{context.newSearchArray}</li></ul>  
-                    <button onClick={props.SavedSearch()}>Save Search</button>
+                    <ul><li>{props.newSearchArray}</li></ul>  
+                    <button onClick={props.SaveSearch()}>Save Search</button>
                 </div>
         
-        </ContextConsumer>
           
         </div>   
     )

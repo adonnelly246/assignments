@@ -1,5 +1,5 @@
 import {Link, Switch, Route} from "react-router-dom"
-import Home from "./Home"
+import Home from "./App"
 import NewSearch from "./NewSearch"
 import SavedSearches from "./SavedSearches"
 
