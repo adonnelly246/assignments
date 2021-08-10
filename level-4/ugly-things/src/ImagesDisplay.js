@@ -1,7 +1,8 @@
 import React from 'react'
 import { ContextConsumer } from './contextClass'
 
-function ListDisplay (){
+
+function ImagesDisplay (){
     return (
             <div>
                 <ContextConsumer>
@@ -19,4 +20,4 @@ function ListDisplay (){
     
 }
 
-export default ListDisplay
+export default ImagesDisplay
