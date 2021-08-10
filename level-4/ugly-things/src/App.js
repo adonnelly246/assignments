@@ -1,8 +1,7 @@
 import React from 'react'
 import Form from './Form'
-import {ContextConsumer} from './contextClass'
 import ImagesDisplay from './ListDisplay'
-import ListDisplay from './ListDisplay'
+
 
 function App(){
     return(
@@ -10,7 +9,7 @@ function App(){
             <h1>Ugly Things</h1>
             <h4>Add New</h4>
             <Form/>
-            <ListDisplay />
+            <ImagesDisplay />
     
         </div>
     )
