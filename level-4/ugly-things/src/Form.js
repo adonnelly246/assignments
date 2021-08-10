@@ -1,18 +1,18 @@
 import React from 'react'
 import {ContextConsumer}  from './contextClass'
 
-//receives props(user input)
-function Form(props){
+
+function Form(){
     return(
         <ContextConsumer>
             {context=>(
                  <div>
-                 <form >
+                 <form onSubmit = {context.handleSubmit}>
                      <input 
                         type="text" 
                         placeholder="Image URL"
                         name="image"
-                        value={context.image}
+                        value={context.imgUrl}
                         onChange={context.handleChange}
                         />
                      <input 
@@ -29,7 +29,7 @@ function Form(props){
                         value={context.description}
                         onChange={context.handleChange}
                         />
-                     <button onClick = {context.SubmitForm}>Submit</button>    
+                     <button >Submit</button>    
                  </form>
              </div>
 
