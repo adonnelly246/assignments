@@ -3,15 +3,16 @@ import { ContextClass } from './contextClass'
 import UglyThing from './UglyThing'
 
 
-function ImagesDisplay (){
+function ImagesDisplay (props){
     const context = useContext(ContextClass)
-    const list = context.uglyThingsArray.map((item, _id)=> {
+    const list = context.uglyThingsArray.map((item) => {
       return <UglyThing 
         item={item} 
-        key ={_id}
-        title ={UglyThing.title}
-        imgUrl = {UglyThing.imgUrl}
-        decription = {UglyThing.description}
+        key ={item._id}
+        title ={item.title}
+        imgUrl = {item.imgUrl}                            
+        description = {item.description}
+        _id={item._id}
         />
 
     })

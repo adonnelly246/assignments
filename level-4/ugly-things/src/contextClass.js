@@ -4,25 +4,12 @@ const ContextClass = React.createContext()
 
 function ContextProvider (props){
   
-    const [uglyThingsArray, setUglyThingsArray] = useState([
-        { 
-            imgUrl:"https://images.unsplash.com/photo-1467103789230-f91a5ff8048a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-            title:"Creepy doll", 
-            description: "creepy!"  
-        },
-        {
-            imgUrl: "https://images.unsplash.com/photo-1510251197878-a2e6d2cb590c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-            title:"Trash", 
-            description: "it stinks!" 
-        }
-    ])
+    const [uglyThingsArray, setUglyThingsArray] = useState([])
 
     const getUglyThings = () => {
         axios.get(`https://api.vschool.io/adonnelly246/thing`)
         .then(res => {
-            const images = res.data
-         return setUglyThingsArray([images, ...uglyThingsArray])
-            console.log(uglyThingsArray)
+            return setUglyThingsArray(prevArr => res.data)
         })
         .catch(err => console.log(err))
     }
@@ -34,41 +21,39 @@ function ContextProvider (props){
 
     
     
-    const handleSubmit = (event, newItem) =>{
-        event.preventDefault()
-        //    setUglyThingsArray(prevArray => [newItem, ...prevArray])
+    const handleSubmit = (e, newItem) =>{
+        e.preventDefault()
         console.log(newItem)
-
-        axios.post(`https://api.vschool.io/adonnelly246/thing/`, newItem) //500
-        
-        .then(res => {
-            // const newArray = res.data
-            // setUglyThingsArray([newArray, newItem, ...uglyThingsArray])     
+        //    setUglyThingsArray(prevArray => [newItem, ...prevArray])
+        axios.post(`https://api.vschool.io/adonnelly246/thing/`, newItem) 
+       .then(res => {
             return getUglyThings()
-        
-       // return console.log(uglyThingsArray)
-     })
+        })
         .catch(err => console.log(err))
-
+        // setUglyThingsArray([newArray, newItem, ...uglyThingsArray])     
+     
     }
   
     
    
-     const handleDelete = (id) => {
-        setUglyThingsArray(prevArray => {
-           let newArr = axios.delete(`https://api.vschool.io/adonnelly246/thing/`+{id}) 
-        //    let newArr = prevArray.filter((item, itemId) => itemId !== id)
-           return newArr
-        })
+    const handleDelete = (e, id) => {
+         e.preventDefault()
+        axios.delete(`https://api.vschool.io/adonnelly246/thing/${id}`) 
+            .then(res => {
+                return getUglyThings()
+            })
+            .catch(err => console.log(err))
      }
   
-    const handleEdit = (itemId, editedItem, event) => {
-        event.preventDefault()
-        setUglyThingsArray(prev =>{
-            let newArr = axios.put(`https://api.vschool.io/adonnelly246/thing/`+{itemId})   
-            // let newArr = prev.uglyThingsArray.map((item,id)=> itemId ===id ? editedItem : item)
-            return newArr
-        })
+    const handleEdit = (e, id, itemToEdit) => {
+        e.preventDefault()
+       axios.put(`https://api.vschool.io/adonnelly246/thing/${id}`, itemToEdit)   
+            .then(res => {
+                return getUglyThings()
+            })
+            .catch(err => console.log(err))   
+        //     // let newArr = prev.uglyThingsArray.map((item,id)=> itemId ===id ? editedItem : item)
+      
      }
 
      

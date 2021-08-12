@@ -5,10 +5,11 @@ import {ContextClass}  from './contextClass'
 function Form(props){
 
     const uglyContext = useContext(ContextClass)
-        const initState = {
-            imgUrl: props ?.imgUrl || "",
-            title: props ?.title || "",
-            description:props ?.description || ""
+        
+    const initState = {
+        imgUrl: props.imgUrl ? props.imgUrl : "",
+        title: props.title ? props.title : "",
+        description:props.description ? props.description : ""
     }
     
     const [imageInfo, setImageInfo] = useState(initState)
@@ -22,17 +23,16 @@ function Form(props){
         }))
     }
 
-
     const onSubmitForm = (e) => {
-        if(props && props.isEditing){
-            uglyContext.handleEdit(e, imageInfo, props.id)
+        if(props && props.isEditing === true){
+            console.log(props.id)
+            uglyContext.handleEdit(e, props.id, imageInfo)
+            return props.toggleIsEdit()
         }
         else{
-        console.log(imageInfo)
-        uglyContext.handleSubmit(e, imageInfo)
-        }
+            uglyContext.handleSubmit(e, imageInfo)
+            }
             return setImageInfo(initState)
-
     }
 
     return(
