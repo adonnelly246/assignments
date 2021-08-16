@@ -18,9 +18,10 @@ function ImagesDisplay (props){
     })
            
     return (
-            <div>
+            <div className="list">
+              
                 {list}
-                {console.log(list)}
+                {/* {console.log(list)} */}
             </div>                     
      )
     

@@ -12,20 +12,20 @@ function UglyThing (props){
 
 
     return(
-        <div>
+        <div >
             {isEditing === false ?
                 <div>
-                    <h3>{props.title}</h3>
+                    <h3 className="title">{props.title}</h3>
                     <img className="image" src={props.imgUrl} alt={props.description} width="400px" maxheight="400px"/>
-                    <p>{props.description}</p>
+                    <p className="description"> {props.description} </p>
                 
-                    <button onClick={toggleIsEdit}>Edit</button>
-                    <button onClick={(e)=>context.handleDelete(e,props._id)}>Delete</button> 
-                    
+                    <button className="editBtn" onClick={toggleIsEdit}>Edit</button>
+                    <button className="deleteBtn" onClick={(e)=>context.handleDelete(e,props._id)}>Delete</button> 
+                    <p>------------------------------------------------------------------------</p>
                 </div>
             :
-                <div>
-                    <h3>Edit</h3>
+                <div className="editForm">
+                    <h3 className="edit-title">Edit- "{props.title}"</h3>
                     <Form 
                         id={props._id}
                         title ={props.title}
@@ -33,9 +33,9 @@ function UglyThing (props){
                         description = {props.description}
                         isEditing = {isEditing}
                         toggleIsEdit = {toggleIsEdit}
-
                     />
-                    <button onClick={toggleIsEdit}> Cancel</button>
+                    <button className="cancelBtn" onClick={toggleIsEdit}> Cancel</button>
+                    <p>---------------------------------------------------------------------</p>
                 </div>
             }
         </div>

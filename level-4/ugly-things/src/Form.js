@@ -3,7 +3,6 @@ import {ContextClass}  from './contextClass'
 
 
 function Form(props){
-
     const uglyContext = useContext(ContextClass)
         
     const initState = {
@@ -25,7 +24,7 @@ function Form(props){
 
     const onSubmitForm = (e) => {
         if(props && props.isEditing === true){
-            console.log(props.id)
+            // console.log(props.id)
             uglyContext.handleEdit(e, props.id, imageInfo)
             return props.toggleIsEdit()
         }
@@ -37,29 +36,29 @@ function Form(props){
 
     return(
             <div>
-                 <form onSubmit = {onSubmitForm}>
-                     <input 
+                 <form className="form" onSubmit = {onSubmitForm}>
+                     <input className="input"
                         type="text" 
                         placeholder="Image URL"
                         name="imgUrl"
                         value={imageInfo.imgUrl}
                         onChange={handleChange}
                         />
-                     <input 
+                     <input className="input"
                         type="text" 
                         placeholder="Title"
                         name="title"
                         value={imageInfo.title}
                         onChange={handleChange}
                         />
-                     <input 
+                     <input className="input"
                         type="text" 
                         placeholder="Description"
                         name="description"
                         value={imageInfo.description}
                         onChange={handleChange}
                         />
-                     <button >Submit</button>    
+                     <button className="submitBtn" >Submit</button>    
                  </form>
         </div>
 

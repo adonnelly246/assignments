@@ -1,0 +1,35 @@
+
+
+.input{
+    padding: 5px;
+    margin: 10px;
+}
+.submitBtn, .cancelBtn{
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.list{
+    text-align: center;
+}
+
+
+.title{
+    margin-top: 30px;
+}
+.deleteBtn{
+    margin-left: 10px;
+
+}
+h1{
+    text-align: center;
+}
+
+.editForm{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.edit-title{
+    text-decoration: underline gray;
+}
