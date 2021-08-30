@@ -4,6 +4,10 @@ const Schema = mongoose.Schema
 
 //Movie blueprint
 const inventorySchema = new Schema({
+    name:{
+        type: String,
+        requred: true
+    },
     material: {
         type: String,
         required: true
@@ -16,4 +20,4 @@ const inventorySchema = new Schema({
 
 })
 
-module.exports = mongoose.model("inventoryModel", inventorySchema)
+module.exports = mongoose.model("Inventory", inventorySchema)

@@ -1,11 +1,11 @@
 // (GET, GET(one), POST, PUT, DELETE, )
 const express = require('express')
-const inventory = require('../models/inventory.js')
+const Inventory = require('../models/inventory.js')
 const inventoryRouter = express.Router()
 
-
+//get all
 inventoryRouter.get( "/", (req, res, next)=>{
-    Inventory.find((err, movies)=> {         
+    Inventory.find((err, inventory)=> {         
         if(err){ 
             res.status(500)             
             return next(err)
@@ -14,8 +14,14 @@ inventoryRouter.get( "/", (req, res, next)=>{
     })
 })
 
+
+//get one request
+
+
+
+//post
 inventoryRouter.post( "/", (req, res, next)=>{
-    const newItem = new inventory(req.body) 
+    const newItem = new Inventory(req.body) 
     newItem.save((err, savedItem)=>{
         if(err){
             res.status(500)
@@ -25,21 +31,34 @@ inventoryRouter.post( "/", (req, res, next)=>{
     })
 })
 
-
-inventoryRouter.delete("/:itemId", (req,res)=>{     
-    const itemId = req.params.itemId
-    const itemIndex = inventory.findIndex(item=> item._id === itemId)
-    movies.splice(itemIndex, 1)
-    res.send(`successfully removed`)
+//delete
+inventoryRouter.delete("/:itemId", (req,res, next)=>{     
+    Inventory.findOneAndDelete(
+        {_id: req.params.inventoryId},
+        (err, deletedItem)=>{   
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(`Successully deleted ${deletedItem.name}`)
+    })
 })
 
+//put
+inventoryRouter.put("/:itemId", (req,res, next)=>{
+    Inventory.findOneAndUpdate(
+        {_id: req.params.inventoryId},        
+         req.body,        
+         {new: true},    
+         (err, updatedItem)=>{ 
 
-inventoryRouter.put("/:itemId", (req,res)=>{
-    const itemId = req.params.itemId
-    const itemIndex = inventory.findIndex(item=> item._id === itemId)
-    const updatedObj = req.body
-    const updatedItem = Object.assign(inventory[itemIndex], updatedObj)
-       res.send(updatedItem)
+             if(err){
+                 res.status(500)
+                 return next(err)
+             }
+              return res.status(201).send(updatedItem) 
+         }
+    )
 })
 
 
