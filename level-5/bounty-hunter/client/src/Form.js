@@ -60,7 +60,7 @@ export default function Form(props){
             <input 
                 type="text" 
                 name="type" 
-                value={inputs.type} 
+                value={inputs.side} 
                 onChange={handleChange} 
                 placeholder="Type: Sith/Jedi">
             </input>

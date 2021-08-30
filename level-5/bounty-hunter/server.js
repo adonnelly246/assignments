@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost:27017/bountiesdb',
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
-        useFindAndModified: false,
+        useFindAndModify: false,
         
     },
     () => console.log('Connected to the Database')
