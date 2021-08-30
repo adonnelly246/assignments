@@ -9,7 +9,7 @@ const Schema = mongoose.Schema
 //     {firstName: "Kylo", lastName: "Ren", living: false, bountyAmmt: 9000, type:"sith", _id: uuid()},
 //     {firstName: "Darth", lastName: "Maul", living: true, bountyAmmt: 999999, type:"sith", _id: uuid()},
 //     {firstName: "Darth", lastName: "Vader", living: false, bountyAmmt: 889819, type:"sith", _id: uuid()},
-//     {firstName: "Rey", lastName: "Solo", living: true, bountyAmmt: 4000, type:"jedi", _id: uuid()},
+//     {firstName: "Rey", lastName: "Skywalker", living: true, bountyAmmt: 4000, type:"jedi", _id: uuid()},
 
 // ]
 
@@ -31,7 +31,10 @@ const bountySchema = new Schema({
         required: true
     },
 
-    side: String
+    side:{
+        type: String,
+        enum: ['sith', 'jedi']
+    } 
 
 })
 

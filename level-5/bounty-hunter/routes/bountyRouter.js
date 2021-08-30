@@ -1,36 +1,58 @@
 const express = require("express")
 const bountyRouter = express.Router()
-const bounties = require('../model/bountyData.js')
+const Bounty = require('../model/bounty.js')
 
-
-bountyRouter.get( "/", (req, res)=>{
-    res.send(bounties)
+bountyRouter.get( "/", (req, res, next)=>{
+    Bounty.find((err, bounties)=>{
+        if (err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(201).send(bounties)
+    })
 })
-   
+  
 
-bountyRouter.post( "/", (req, res)=>{
-    const newBounty = req.body
-    newBounty._id = uuid()
-    bounties.push(newBounty)
-    res.send(`successfully added ${newBounty.firstName}  ${newBounty.lastName}!`)
+bountyRouter.post( "/", (req, res, next)=>{
+    const newBounty =  new Bounty(req.body)
+    newBounty.save((err, savedBounty)=>{
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(201).send(savedBounty)
+    })
 })
+
 
    //DELETE 
-bountyRouter.delete("/:bountyId", (req,res)=>{     
-    const bountyId = req.params.bountyId
-    const bountyIndex = bounties.findIndex(bounty=> bounty._id === bountyId)
-    bounties.splice(bountyIndex, 1)
-    res.send(`Successfully removed!`)
+bountyRouter.delete("/:bountyId", (req,res, next)=>{     
+    Bounty.findOneAndDelete(
+        {_id: req.params.bountyId},
+        (err, deletedItem)=>{   
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(`Successully terminated ${deletedItem.firstName} ${deletedItem.lastName}. Bounty Complete!`)
+    })
 }) 
 
 //UPDATE
-bountyRouter.put("/:bountyId", (req,res)=>{
-    const bountyId = req.params.bountyId
-    const bountyIndex = bounties.findIndex(bounty=> bounty._id === bountyId)
-    const updateObject = req.body
+bountyRouter.put("/:bountyId", (req,res, next)=>{
+    Bounty.findOneAndUpdate(
+        {_id: req.params.bountyId},        
+         req.body,        
+         {new: true},    
+         (err, updatedBounty)=>{ 
 
-    const updatedBounty = Object.assign(bounties[bountyIndex], updateObject)
-       res.send(updatedBounty)
+             if(err){
+                 res.status(500)
+                 return next(err)
+             }
+              return res.status(201).send(updatedBounty) 
+         }
+    )
 })
 
 

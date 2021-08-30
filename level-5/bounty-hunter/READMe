@@ -2,5 +2,5 @@ First Name
 Last Name
 Living (Boolean)
 Bounty Amount (number)
-Type (‘Sith’ or ‘Jedi’)
+Type (‘Sith’ or ‘Jedi’)-- changed to side to not be confused with 'type: String' ect.
 ID 
