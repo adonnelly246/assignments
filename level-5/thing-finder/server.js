@@ -7,7 +7,7 @@ app.use(express.json())
 
 
 //Routes//
-app.use("/things", require("./routes/thingRouter.js"))
+app.use("/toys", require("./routes/thingRouter.js"))
 
 
 app.listen(5000, ()=>{
