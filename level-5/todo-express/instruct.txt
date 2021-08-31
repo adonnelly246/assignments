@@ -1,0 +1,15 @@
+
+//GET ALL//
+returns the entire list of todos,
+
+//POST//
+allows new todo items to be posted to the array,
+
+//PUT//
+allows the user to update a todo by its _id,
+
+//DELETE//
+allows the user to delete a todo by its _id, and
+
+//GET one//
+allows the user retrieve a single todo by its _id
